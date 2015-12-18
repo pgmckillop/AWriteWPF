@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="awriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcademicLevel">
+    <Key>
+      <PropertyRef Name="idAcadLevel" />
+    </Key>
+    <Property Name="idAcadLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AcadLevelName" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="AcadLevelShort" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="AcadLevelSort" Type="int" />
+  </EntityType>
+  <EntityType Name="Assessment">
+    <Key>
+      <PropertyRef Name="idAssessment" />
+    </Key>
+    <Property Name="idAssessment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssessmentType_idAssessmentType" Type="int" Nullable="false" />
+    <Property Name="AssessmentName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="AssessmentCode" Type="varchar" MaxLength="45" />
+    <Property Name="Assessment_AssessmentScenario" Type="varchar(max)" />
+    <Property Name="SystemUser_idSystemUser" Type="int" />
+    <Property Name="Course_idCourse" Type="int" />
+  </EntityType>
+  <EntityType Name="AssessmentObjective">
+    <Key>
+      <PropertyRef Name="idAssessmentObjective" />
+    </Key>
+    <Property Name="idAssessmentObjective" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AOShort" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="AOName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="AOSortOrder" Type="int" />
+    <Property Name="AOFocus" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="AssessmentTask">
+    <Key>
+      <PropertyRef Name="idAssessmentTask" />
+    </Key>
+    <Property Name="idAssessmentTask" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Assessment_idAssessment" Type="int" Nullable="false" />
+    <Property Name="TaskOrderNumber" Type="int" Nullable="false" />
+    <Property Name="AssessTaskName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CandidateInstructions" Type="varchar(max)" />
+    <Property Name="EvidenceRequired" Type="varchar(max)" />
+    <Property Name="CentreGuidance" Type="varchar(max)" />
+    <Property Name="AssessmentTaskCondition_idAssessmentTaskCondition" Type="int" Nullable="false" />
+    <Property Name="AssessmentTask_TaskTimeEstimate" Type="decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="AssessmentTaskCondition">
+    <Key>
+      <PropertyRef Name="idAssessmentTaskCondition" />
+    </Key>
+    <Property Name="idAssessmentTaskCondition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssessTaskConditionFull" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="AssessTaskConditionShort" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AssessmentTopicRange">
+    <Key>
+      <PropertyRef Name="idAssessmentTopicRange" />
+    </Key>
+    <Property Name="idAssessmentTopicRange" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUShort" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOShort" Type="nvarchar" MaxLength="50" />
+    <Property Name="TopicShort" Type="nvarchar" MaxLength="50" />
+    <Property Name="Assessment_idAssessment" Type="int" Nullable="false" />
+    <Property Name="LOTopic_idLOTopic" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentType">
+    <Key>
+      <PropertyRef Name="idAssessmentType" />
+    </Key>
+    <Property Name="idAssessmentType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssessmentTypeName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="idCourse" />
+    </Key>
+    <Property Name="idCourse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QualificationPathway_idQualificationPathway" Type="int" Nullable="false" />
+    <Property Name="CourseName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseUnit">
+    <Key>
+      <PropertyRef Name="idCourseUnit" />
+    </Key>
+    <Property Name="idCourseUnit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitStatus_idUnitStatus" Type="int" Nullable="false" />
+    <Property Name="Course_idCourse" Type="int" Nullable="false" />
+    <Property Name="QualUnit_idQualUnit" Type="int" Nullable="false" />
+    <Property Name="CourseUnitTitle" Type="varchar" MaxLength="255" />
+    <Property Name="CUShort" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Curriculum">
+    <Key>
+      <PropertyRef Name="idCurriculum" />
+    </Key>
+    <Property Name="idCurriculum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AcademiclLevel_idAcadLevel" Type="int" Nullable="false" />
+    <Property Name="CurriculumName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOTopic">
+    <Key>
+      <PropertyRef Name="idLOTopic" />
+    </Key>
+    <Property Name="idLOTopic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitLearningOutcome_idUnitLearningOutcome" Type="int" Nullable="false" />
+    <Property Name="TopicName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="TopicCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TopicTestingMethod_idTopicTestingMethod" Type="int" />
+    <Property Name="TopicShort" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="idQualification" />
+    </Key>
+    <Property Name="idQualification" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Curriculum_idCurriculum" Type="int" Nullable="false" />
+    <Property Name="QualificationName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="QualificationCode" Type="varchar" MaxLength="45" />
+    <Property Name="QualValidFrom" Type="date" />
+    <Property Name="QualValidTo" Type="date" />
+    <Property Name="QualAccreditCode" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="QualificationPathway">
+    <Key>
+      <PropertyRef Name="idQualificationPathway" />
+    </Key>
+    <Property Name="idQualificationPathway" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qualification_idQualification" Type="int" Nullable="false" />
+    <Property Name="QualPathwayName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QualUnit">
+    <Key>
+      <PropertyRef Name="idQualUnit" />
+    </Key>
+    <Property Name="idQualUnit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qualification_idQualification" Type="int" Nullable="false" />
+    <Property Name="QualUnitTitle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CGUnitNumber" Type="int" Nullable="false" />
+    <Property Name="QualUnitUAN" Type="varchar" MaxLength="45" />
+    <Property Name="QualUnitGLH" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="idSystemUser" />
+    </Key>
+    <Property Name="idSystemUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SystemUserType_idSystemUserType" Type="int" />
+    <Property Name="SystemUserForename" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SystemUserSurname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SystemUserInitialPassword" Type="varchar" MaxLength="266" />
+    <Property Name="SystemUserLoginName" Type="varchar" MaxLength="20" />
+    <Property Name="SystemUserOrganisation" Type="varchar" MaxLength="255" />
+    <Property Name="SystemUserEmail" Type="varchar(max)" Nullable="false" />
+    <Property Name="SystemUserLandline" Type="varchar" MaxLength="20" />
+    <Property Name="SystemUserMobile" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SystemUserType">
+    <Key>
+      <PropertyRef Name="idSystemUserType" />
+    </Key>
+    <Property Name="idSystemUserType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SystemUserTypeName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskAO">
+    <Key>
+      <PropertyRef Name="idTaskAO" />
+    </Key>
+    <Property Name="idTaskAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssessmentTask_idAssessmentTask" Type="int" Nullable="false" />
+    <Property Name="AssessmentObjective_idAssessmentObjective" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskKeyword">
+    <Key>
+      <PropertyRef Name="idTaskKeyword" />
+    </Key>
+    <Property Name="idTaskKeyword" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TopicKeyword_idTopicKeyword" Type="int" Nullable="false" />
+    <Property Name="AssessmentTask_idAssessmentTask" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskTopicRange">
+    <Key>
+      <PropertyRef Name="idTaskTopicRange" />
+    </Key>
+    <Property Name="idTaskTopicRange" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssessmentTask_idAssessmentTask" Type="int" Nullable="false" />
+    <Property Name="AssessmentTopicRange_idAssessmentTopic" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicKeyword">
+    <Key>
+      <PropertyRef Name="idTopicKeyword" />
+    </Key>
+    <Property Name="idTopicKeyword" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOTopic_idLOTopic" Type="int" Nullable="false" />
+    <Property Name="KeywordText" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicTestingMethod">
+    <Key>
+      <PropertyRef Name="idTopicTestingMethod" />
+    </Key>
+    <Property Name="idTopicTestingMethod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestingMethodFull" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="TestingMethodShort" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="UnitLearningOutcome">
+    <Key>
+      <PropertyRef Name="idUnitLearningOutcome" />
+    </Key>
+    <Property Name="idUnitLearningOutcome" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QualUnit_idQualUnit" Type="int" Nullable="false" />
+    <Property Name="LearningOutsomeName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LearningOutcomeNumber" Type="int" Nullable="false" />
+    <Property Name="LOShort" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UnitsAssessed">
+    <Key>
+      <PropertyRef Name="idUnitsAssessed" />
+    </Key>
+    <Property Name="idUnitsAssessed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseUnit_idCourseUnit" Type="int" Nullable="false" />
+    <Property Name="Assessment_idAssessment" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnitStatus">
+    <Key>
+      <PropertyRef Name="idUnitStatus" />
+    </Key>
+    <Property Name="idUnitStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitStatusName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Assessmen__Asses__34C8D9D1">
+    <End Role="AssessmentType" Type="Self.AssessmentType" Multiplicity="1" />
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentType">
+        <PropertyRef Name="idAssessmentType" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="AssessmentType_idAssessmentType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Assessmen__Asses__4316F928">
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="1" />
+    <End Role="AssessmentTask" Type="Self.AssessmentTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assessment">
+        <PropertyRef Name="idAssessment" />
+      </Principal>
+      <Dependent Role="AssessmentTask">
+        <PropertyRef Name="Assessment_idAssessment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Assessmen__Asses__656C112C">
+    <End Role="AssessmentTaskCondition" Type="Self.AssessmentTaskCondition" Multiplicity="1" />
+    <End Role="AssessmentTask" Type="Self.AssessmentTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTaskCondition">
+        <PropertyRef Name="idAssessmentTaskCondition" />
+      </Principal>
+      <Dependent Role="AssessmentTask">
+        <PropertyRef Name="AssessmentTaskCondition_idAssessmentTaskCondition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Assessmen__Cours__2A164134">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="idCourse" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="Course_idCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Assessmen__Syste__72C60C4A">
+    <End Role="SystemUser" Type="Self.SystemUser" Multiplicity="0..1" />
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="idSystemUser" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="SystemUser_idSystemUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Course__Qualific__5629CD9C">
+    <End Role="QualificationPathway" Type="Self.QualificationPathway" Multiplicity="1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QualificationPathway">
+        <PropertyRef Name="idQualificationPathway" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="QualificationPathway_idQualificationPathway" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CourseUni__Cours__5DCAEF64">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="CourseUnit" Type="Self.CourseUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="idCourse" />
+      </Principal>
+      <Dependent Role="CourseUnit">
+        <PropertyRef Name="Course_idCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CourseUni__QualU__5CD6CB2B">
+    <End Role="QualUnit" Type="Self.QualUnit" Multiplicity="1" />
+    <End Role="CourseUnit" Type="Self.CourseUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QualUnit">
+        <PropertyRef Name="idQualUnit" />
+      </Principal>
+      <Dependent Role="CourseUnit">
+        <PropertyRef Name="QualUnit_idQualUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CourseUni__UnitS__5EBF139D">
+    <End Role="UnitStatus" Type="Self.UnitStatus" Multiplicity="1" />
+    <End Role="CourseUnit" Type="Self.CourseUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitStatus">
+        <PropertyRef Name="idUnitStatus" />
+      </Principal>
+      <Dependent Role="CourseUnit">
+        <PropertyRef Name="UnitStatus_idUnitStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Curriculu__Acade__37A5467C">
+    <End Role="AcademicLevel" Type="Self.AcademicLevel" Multiplicity="1" />
+    <End Role="Curriculum" Type="Self.Curriculum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicLevel">
+        <PropertyRef Name="idAcadLevel" />
+      </Principal>
+      <Dependent Role="Curriculum">
+        <PropertyRef Name="AcademiclLevel_idAcadLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOTopic__TopicTe__68487DD7">
+    <End Role="TopicTestingMethod" Type="Self.TopicTestingMethod" Multiplicity="0..1" />
+    <End Role="LOTopic" Type="Self.LOTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopicTestingMethod">
+        <PropertyRef Name="idTopicTestingMethod" />
+      </Principal>
+      <Dependent Role="LOTopic">
+        <PropertyRef Name="TopicTestingMethod_idTopicTestingMethod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LOTopic__UnitLea__45F365D3">
+    <End Role="UnitLearningOutcome" Type="Self.UnitLearningOutcome" Multiplicity="1" />
+    <End Role="LOTopic" Type="Self.LOTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitLearningOutcome">
+        <PropertyRef Name="idUnitLearningOutcome" />
+      </Principal>
+      <Dependent Role="LOTopic">
+        <PropertyRef Name="UnitLearningOutcome_idUnitLearningOutcome" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Qualifica__Curri__3A81B327">
+    <End Role="Curriculum" Type="Self.Curriculum" Multiplicity="1" />
+    <End Role="Qualification" Type="Self.Qualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curriculum">
+        <PropertyRef Name="idCurriculum" />
+      </Principal>
+      <Dependent Role="Qualification">
+        <PropertyRef Name="Curriculum_idCurriculum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Qualifica__Quali__5070F446">
+    <End Role="Qualification" Type="Self.Qualification" Multiplicity="1" />
+    <End Role="QualificationPathway" Type="Self.QualificationPathway" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualification">
+        <PropertyRef Name="idQualification" />
+      </Principal>
+      <Dependent Role="QualificationPathway">
+        <PropertyRef Name="Qualification_idQualification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QualUnit__Qualif__3D5E1FD2">
+    <End Role="Qualification" Type="Self.Qualification" Multiplicity="1" />
+    <End Role="QualUnit" Type="Self.QualUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualification">
+        <PropertyRef Name="idQualification" />
+      </Principal>
+      <Dependent Role="QualUnit">
+        <PropertyRef Name="Qualification_idQualification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SystemUse__Syste__71D1E811">
+    <End Role="SystemUserType" Type="Self.SystemUserType" Multiplicity="0..1" />
+    <End Role="SystemUser" Type="Self.SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUserType">
+        <PropertyRef Name="idSystemUserType" />
+      </Principal>
+      <Dependent Role="SystemUser">
+        <PropertyRef Name="SystemUserType_idSystemUserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaskAO__Assessme__48CFD27E">
+    <End Role="AssessmentObjective" Type="Self.AssessmentObjective" Multiplicity="1" />
+    <End Role="TaskAO" Type="Self.TaskAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentObjective">
+        <PropertyRef Name="idAssessmentObjective" />
+      </Principal>
+      <Dependent Role="TaskAO">
+        <PropertyRef Name="AssessmentObjective_idAssessmentObjective" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaskAO__Assessme__49C3F6B7">
+    <End Role="AssessmentTask" Type="Self.AssessmentTask" Multiplicity="1" />
+    <End Role="TaskAO" Type="Self.TaskAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTask">
+        <PropertyRef Name="idAssessmentTask" />
+      </Principal>
+      <Dependent Role="TaskAO">
+        <PropertyRef Name="AssessmentTask_idAssessmentTask" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaskKeywo__Asses__59063A47">
+    <End Role="AssessmentTask" Type="Self.AssessmentTask" Multiplicity="1" />
+    <End Role="TaskKeyword" Type="Self.TaskKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTask">
+        <PropertyRef Name="idAssessmentTask" />
+      </Principal>
+      <Dependent Role="TaskKeyword">
+        <PropertyRef Name="AssessmentTask_idAssessmentTask" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaskKeywo__Topic__59FA5E80">
+    <End Role="TopicKeyword" Type="Self.TopicKeyword" Multiplicity="1" />
+    <End Role="TaskKeyword" Type="Self.TaskKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopicKeyword">
+        <PropertyRef Name="idTopicKeyword" />
+      </Principal>
+      <Dependent Role="TaskKeyword">
+        <PropertyRef Name="TopicKeyword_idTopicKeyword" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaskTopic__Asses__4D94879B">
+    <End Role="AssessmentTask" Type="Self.AssessmentTask" Multiplicity="1" />
+    <End Role="TaskTopicRange" Type="Self.TaskTopicRange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTask">
+        <PropertyRef Name="idAssessmentTask" />
+      </Principal>
+      <Dependent Role="TaskTopicRange">
+        <PropertyRef Name="AssessmentTask_idAssessmentTask" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TopicKeyw__LOTop__534D60F1">
+    <End Role="LOTopic" Type="Self.LOTopic" Multiplicity="1" />
+    <End Role="TopicKeyword" Type="Self.TopicKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOTopic">
+        <PropertyRef Name="idLOTopic" />
+      </Principal>
+      <Dependent Role="TopicKeyword">
+        <PropertyRef Name="LOTopic_idLOTopic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UnitLearn__QualU__403A8C7D">
+    <End Role="QualUnit" Type="Self.QualUnit" Multiplicity="1" />
+    <End Role="UnitLearningOutcome" Type="Self.UnitLearningOutcome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QualUnit">
+        <PropertyRef Name="idQualUnit" />
+      </Principal>
+      <Dependent Role="UnitLearningOutcome">
+        <PropertyRef Name="QualUnit_idQualUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UnitsAsse__Asses__619B8048">
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="1" />
+    <End Role="UnitsAssessed" Type="Self.UnitsAssessed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assessment">
+        <PropertyRef Name="idAssessment" />
+      </Principal>
+      <Dependent Role="UnitsAssessed">
+        <PropertyRef Name="Assessment_idAssessment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UnitsAsse__Cours__628FA481">
+    <End Role="CourseUnit" Type="Self.CourseUnit" Multiplicity="1" />
+    <End Role="UnitsAssessed" Type="Self.UnitsAssessed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseUnit">
+        <PropertyRef Name="idCourseUnit" />
+      </Principal>
+      <Dependent Role="UnitsAssessed">
+        <PropertyRef Name="CourseUnit_idCourseUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATR_Assessment">
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="1" />
+    <End Role="AssessmentTopicRange" Type="Self.AssessmentTopicRange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assessment">
+        <PropertyRef Name="idAssessment" />
+      </Principal>
+      <Dependent Role="AssessmentTopicRange">
+        <PropertyRef Name="Assessment_idAssessment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATR_LOTopic">
+    <End Role="LOTopic" Type="Self.LOTopic" Multiplicity="1" />
+    <End Role="AssessmentTopicRange" Type="Self.AssessmentTopicRange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOTopic">
+        <PropertyRef Name="idLOTopic" />
+      </Principal>
+      <Dependent Role="AssessmentTopicRange">
+        <PropertyRef Name="LOTopic_idLOTopic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTR_ATR">
+    <End Role="AssessmentTopicRange" Type="Self.AssessmentTopicRange" Multiplicity="1" />
+    <End Role="TaskTopicRange" Type="Self.TaskTopicRange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTopicRange">
+        <PropertyRef Name="idAssessmentTopicRange" />
+      </Principal>
+      <Dependent Role="TaskTopicRange">
+        <PropertyRef Name="AssessmentTopicRange_idAssessmentTopic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetAcadLevelByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LevelID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllCourseUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetCoursesByPathway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPathway" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCourseUnitID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="courseID" Type="int" Mode="In" />
+    <Parameter Name="courseUnitTitle" Type="varchar" Mode="In" />
+    <Parameter Name="courseUnitID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetCourseUnitsByCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCourse" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCourseUnitsByCourseAllInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCourse" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCurriculumByLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idAcadLevel" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPathwaysByQualification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idQualification" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetQualificationByCurriculum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCurriculum" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSystemUserByLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="systemUserLoginName" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="awriteModelStoreContainer">
+    <EntitySet Name="AcademicLevel" EntityType="Self.AcademicLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Assessment" EntityType="Self.Assessment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentObjective" EntityType="Self.AssessmentObjective" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTask" EntityType="Self.AssessmentTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTaskCondition" EntityType="Self.AssessmentTaskCondition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTopicRange" EntityType="Self.AssessmentTopicRange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentType" EntityType="Self.AssessmentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseUnit" EntityType="Self.CourseUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Curriculum" EntityType="Self.Curriculum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOTopic" EntityType="Self.LOTopic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualificationPathway" EntityType="Self.QualificationPathway" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualUnit" EntityType="Self.QualUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemUser" EntityType="Self.SystemUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemUserType" EntityType="Self.SystemUserType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskAO" EntityType="Self.TaskAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskKeyword" EntityType="Self.TaskKeyword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskTopicRange" EntityType="Self.TaskTopicRange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopicKeyword" EntityType="Self.TopicKeyword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopicTestingMethod" EntityType="Self.TopicTestingMethod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitLearningOutcome" EntityType="Self.UnitLearningOutcome" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitsAssessed" EntityType="Self.UnitsAssessed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitStatus" EntityType="Self.UnitStatus" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Assessmen__Asses__34C8D9D1" Association="Self.FK__Assessmen__Asses__34C8D9D1">
+      <End Role="AssessmentType" EntitySet="AssessmentType" />
+      <End Role="Assessment" EntitySet="Assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Assessmen__Asses__4316F928" Association="Self.FK__Assessmen__Asses__4316F928">
+      <End Role="Assessment" EntitySet="Assessment" />
+      <End Role="AssessmentTask" EntitySet="AssessmentTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Assessmen__Asses__656C112C" Association="Self.FK__Assessmen__Asses__656C112C">
+      <End Role="AssessmentTaskCondition" EntitySet="AssessmentTaskCondition" />
+      <End Role="AssessmentTask" EntitySet="AssessmentTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Assessmen__Cours__2A164134" Association="Self.FK__Assessmen__Cours__2A164134">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Assessment" EntitySet="Assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Assessmen__Syste__72C60C4A" Association="Self.FK__Assessmen__Syste__72C60C4A">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="Assessment" EntitySet="Assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Course__Qualific__5629CD9C" Association="Self.FK__Course__Qualific__5629CD9C">
+      <End Role="QualificationPathway" EntitySet="QualificationPathway" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CourseUni__Cours__5DCAEF64" Association="Self.FK__CourseUni__Cours__5DCAEF64">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseUnit" EntitySet="CourseUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CourseUni__QualU__5CD6CB2B" Association="Self.FK__CourseUni__QualU__5CD6CB2B">
+      <End Role="QualUnit" EntitySet="QualUnit" />
+      <End Role="CourseUnit" EntitySet="CourseUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CourseUni__UnitS__5EBF139D" Association="Self.FK__CourseUni__UnitS__5EBF139D">
+      <End Role="UnitStatus" EntitySet="UnitStatus" />
+      <End Role="CourseUnit" EntitySet="CourseUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Curriculu__Acade__37A5467C" Association="Self.FK__Curriculu__Acade__37A5467C">
+      <End Role="AcademicLevel" EntitySet="AcademicLevel" />
+      <End Role="Curriculum" EntitySet="Curriculum" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOTopic__TopicTe__68487DD7" Association="Self.FK__LOTopic__TopicTe__68487DD7">
+      <End Role="TopicTestingMethod" EntitySet="TopicTestingMethod" />
+      <End Role="LOTopic" EntitySet="LOTopic" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LOTopic__UnitLea__45F365D3" Association="Self.FK__LOTopic__UnitLea__45F365D3">
+      <End Role="UnitLearningOutcome" EntitySet="UnitLearningOutcome" />
+      <End Role="LOTopic" EntitySet="LOTopic" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Qualifica__Curri__3A81B327" Association="Self.FK__Qualifica__Curri__3A81B327">
+      <End Role="Curriculum" EntitySet="Curriculum" />
+      <End Role="Qualification" EntitySet="Qualification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Qualifica__Quali__5070F446" Association="Self.FK__Qualifica__Quali__5070F446">
+      <End Role="Qualification" EntitySet="Qualification" />
+      <End Role="QualificationPathway" EntitySet="QualificationPathway" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QualUnit__Qualif__3D5E1FD2" Association="Self.FK__QualUnit__Qualif__3D5E1FD2">
+      <End Role="Qualification" EntitySet="Qualification" />
+      <End Role="QualUnit" EntitySet="QualUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SystemUse__Syste__71D1E811" Association="Self.FK__SystemUse__Syste__71D1E811">
+      <End Role="SystemUserType" EntitySet="SystemUserType" />
+      <End Role="SystemUser" EntitySet="SystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaskAO__Assessme__48CFD27E" Association="Self.FK__TaskAO__Assessme__48CFD27E">
+      <End Role="AssessmentObjective" EntitySet="AssessmentObjective" />
+      <End Role="TaskAO" EntitySet="TaskAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaskAO__Assessme__49C3F6B7" Association="Self.FK__TaskAO__Assessme__49C3F6B7">
+      <End Role="AssessmentTask" EntitySet="AssessmentTask" />
+      <End Role="TaskAO" EntitySet="TaskAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaskKeywo__Asses__59063A47" Association="Self.FK__TaskKeywo__Asses__59063A47">
+      <End Role="AssessmentTask" EntitySet="AssessmentTask" />
+      <End Role="TaskKeyword" EntitySet="TaskKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaskKeywo__Topic__59FA5E80" Association="Self.FK__TaskKeywo__Topic__59FA5E80">
+      <End Role="TopicKeyword" EntitySet="TopicKeyword" />
+      <End Role="TaskKeyword" EntitySet="TaskKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaskTopic__Asses__4D94879B" Association="Self.FK__TaskTopic__Asses__4D94879B">
+      <End Role="AssessmentTask" EntitySet="AssessmentTask" />
+      <End Role="TaskTopicRange" EntitySet="TaskTopicRange" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TopicKeyw__LOTop__534D60F1" Association="Self.FK__TopicKeyw__LOTop__534D60F1">
+      <End Role="LOTopic" EntitySet="LOTopic" />
+      <End Role="TopicKeyword" EntitySet="TopicKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UnitLearn__QualU__403A8C7D" Association="Self.FK__UnitLearn__QualU__403A8C7D">
+      <End Role="QualUnit" EntitySet="QualUnit" />
+      <End Role="UnitLearningOutcome" EntitySet="UnitLearningOutcome" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UnitsAsse__Asses__619B8048" Association="Self.FK__UnitsAsse__Asses__619B8048">
+      <End Role="Assessment" EntitySet="Assessment" />
+      <End Role="UnitsAssessed" EntitySet="UnitsAssessed" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UnitsAsse__Cours__628FA481" Association="Self.FK__UnitsAsse__Cours__628FA481">
+      <End Role="CourseUnit" EntitySet="CourseUnit" />
+      <End Role="UnitsAssessed" EntitySet="UnitsAssessed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATR_Assessment" Association="Self.FK_ATR_Assessment">
+      <End Role="Assessment" EntitySet="Assessment" />
+      <End Role="AssessmentTopicRange" EntitySet="AssessmentTopicRange" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATR_LOTopic" Association="Self.FK_ATR_LOTopic">
+      <End Role="LOTopic" EntitySet="LOTopic" />
+      <End Role="AssessmentTopicRange" EntitySet="AssessmentTopicRange" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTR_ATR" Association="Self.FK_TTR_ATR">
+      <End Role="AssessmentTopicRange" EntitySet="AssessmentTopicRange" />
+      <End Role="TaskTopicRange" EntitySet="TaskTopicRange" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

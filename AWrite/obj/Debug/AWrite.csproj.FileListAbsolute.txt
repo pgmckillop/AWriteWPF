@@ -1,0 +1,130 @@
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe.config
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.pdb
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.dll
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.pdb
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csprojResolveAssemblyReference.cache
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.g.cs
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\App.g.cs
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.cache
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.lref
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.baml
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.g.resources
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.Properties.Resources.resources
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csproj.GenerateResource.Cache
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.exe
+G:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.pdb
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe.config
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.exe
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.pdb
+D:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe.config
+D:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.exe
+D:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.pdb
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csprojResolveAssemblyReference.cache
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.g.cs
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.g.cs
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\App.g.cs
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.cache
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.lref
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.pdb
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.dll
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.pdb
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.baml
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.baml
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.g.resources
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.Properties.Resources.resources
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csproj.GenerateResource.Cache
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.g.cs
+H:\00 DevActive\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe.config
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.exe
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.pdb
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.pdb
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.dll
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.pdb
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csprojResolveAssemblyReference.cache
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\App.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.cache
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.lref
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.g.resources
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.Properties.Resources.resources
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csproj.GenerateResource.Cache
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe.config
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.exe
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.pdb
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csprojResolveAssemblyReference.cache
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\App.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.cache
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.lref
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.pdb
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.dll
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.pdb
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.g.resources
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.Properties.Resources.resources
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csproj.GenerateResource.Cache
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\Assessment.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\Assessment.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTasks.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTask1.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTasks.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTask1.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe.config
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.exe
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.pdb
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.exe
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWrite.pdb
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.dll
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWriteDB.pdb
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csprojResolveAssemblyReference.cache
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\Assessment.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTasks.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTask1.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\App.g.cs
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.cache
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite_MarkupCompile.lref
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\Assessment.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTasks.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\MainWindow.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\NavWindow.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\SignIn.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTask1.baml
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.g.resources
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.Properties.Resources.resources
+D:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AWrite.csproj.GenerateResource.Cache
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\Assessment.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTasks.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\Assessment.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTasks.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\DragTest.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\DragTest.baml
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\DragTest.g.cs
+G:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\DragTest.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTaskDetail.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\TreeTry.g.cs
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\AssessmentTaskDetail.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\obj\Debug\TreeTry.baml
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWEF.dll
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\EntityFramework.dll
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\AWEF.pdb
+H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWrite\bin\Debug\EntityFramework.xml
+C:\Users\Paul\Desktop\Github\AWrite\AWrite\bin\Debug\AWrite.exe.config
+C:\Users\Paul\Desktop\Github\AWrite\AWrite\obj\Debug\AWrite.exe
+C:\Users\Paul\Desktop\Github\AWrite\AWrite\obj\Debug\AWrite.pdb

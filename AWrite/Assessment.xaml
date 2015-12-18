@@ -1,0 +1,222 @@
+﻿<Page x:Class="AWrite.Assessment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AWrite"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Assessment">
+    <!-- This page is used to define assessment and unit range -->
+    <!-- Author: Paul McKillop-->
+    <!-- Last Edit Date: 151126 -->
+    <!-- To Do:
+            1:
+            2:
+            3: -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!--Title of page-->
+            <RowDefinition Height="*"/>
+            <!--Assessment Type-->
+            <RowDefinition Height="*"/>
+            <!--Assessment Name-->
+            <RowDefinition Height="*"/>
+            <!--Assessment Code-->
+            <RowDefinition Height="3*"/>
+            <!--Assessment scenario-->
+            <RowDefinition Height="9*"/>
+            <!--Lists of units-->
+            <RowDefinition Height="2*"/>
+            <!--Next command button-->
+            <RowDefinition Height="*"/>
+            <!--Page footer-->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <!--text labels-->
+            <ColumnDefinition Width="3*" />
+            <!--List control-->
+            <ColumnDefinition Width="*" />
+            <!--Transfer buttons-->
+            <ColumnDefinition Width="3*" />
+            <!--List control-->
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="5" 
+                   TextAlignment="Center"
+                   FontFamily="Calibri" 
+                   FontSize="25" 
+                   HorizontalAlignment="Stretch" 
+                   Grid.ColumnSpan="4">
+            Assessment data
+        </TextBlock>
+
+        <TextBlock Margin="10,5,10,5"
+                   TextAlignment="Left"
+                   FontSize="15"
+                   Grid.Row="1">
+            Assessment Type
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   TextAlignment="Left"
+                   FontSize="15"
+                   Grid.Row="2">
+            Assessment Name
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   TextAlignment="Left"
+                   FontSize="15"
+                   Grid.Row="3">
+            Assessment Code
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   TextAlignment="Left"
+                   FontSize="15"
+                   Grid.Row="4">
+            Assessment Scenario: Write an initial scenario. The scenario will be edited when tasks have been written.
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap"
+                   TextAlignment="Left"
+                   FontSize="15"
+                   Grid.Row="5">
+            Choose course units to be assessed and transfer them to assessment list
+        </TextBlock>
+
+        <ComboBox Name="cboAssessmentType"
+                  ItemsSource="{Binding}"
+                  Margin="10,5,10,5"
+                  Background="Beige"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="3"
+                  HorizontalAlignment="Stretch" />
+        <TextBox Name="txtAssessmentName"
+                 Margin="10,5,10,5"
+                 Background="Beige"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 HorizontalAlignment="Stretch" />
+        <TextBox Name="txtAssessmentCode"
+                 Margin="10,5,10,5"
+                 Background="Beige"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 HorizontalAlignment="Stretch" />
+        <RichTextBox Name="rtxtAssessmentScenario"
+                     Margin="10,5,10,5"
+                     Background="Beige"
+                     Grid.Row="4"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="3"
+                     VerticalAlignment="Stretch"
+                     HorizontalAlignment="Stretch" />
+        <Grid
+            Grid.Row="5"
+            Grid.Column="1"
+            Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="9*" />
+            </Grid.RowDefinitions>
+            <TextBlock Margin="10,5,10,5"
+                       TextAlignment="Center"
+                       Grid.Row="0">
+                Course Units
+            </TextBlock>
+            <ListBox Name="lbCourseUnits"
+                     Margin="10,5,10,5"
+                     SelectionChanged="lbCourseUnits_SelectionChanged"
+                     ItemsSource="{Binding}"
+                     Grid.Row="1"
+                     SelectionMode="Extended"
+                     VerticalAlignment="Stretch"
+                     Background="Beige" />
+        </Grid>
+
+        <Grid
+            Grid.Row="5"
+            Grid.Column="3"
+            Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="9*" />
+            </Grid.RowDefinitions>
+            <TextBlock Margin="10,5,10,5"
+                       TextAlignment="Center"
+                       Grid.Row="0">
+                Units Assessed
+            </TextBlock>
+            <ListBox Name="lbUnitsAssessed"
+                     Margin="10,5,10,5"
+                     AllowDrop="True"
+                     Grid.Row="1"
+                     VerticalAlignment="Stretch"
+                     Background="Beige">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding CourseUnitTitle}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <!-- Move Buttons grid -->
+        <Grid Margin="5,5,5,0"
+              Grid.Row="5"
+              Grid.Column="2"
+              VerticalAlignment="Top" Height="354">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Name="btnAddUnit"
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Stretch"
+                    Click="btnAddUnit_Click" Height="71">
+                Add Unit
+            </Button>
+            <Button Name="btnRemoveUnit"
+                    Grid.Row="3"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    Click="btnRemoveUnit_Click">
+                Remove Unit
+            </Button>
+            
+            <TextBlock Grid.Row="4"
+                       Name="tbkCourseUnitID"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Text="{Binding ElementName=lbCourseUnits,Path=SelectedValue}" />
+        </Grid>
+
+        <Button Name="btnGoSetUpTasks"
+                Grid.Row="6"
+                Grid.Column="3"
+                Margin="10,5,10,5"
+                Content="NEXT: Set up tasks"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Click="btnGoSetUpTasks_Click" />
+    </Grid>
+</Page>

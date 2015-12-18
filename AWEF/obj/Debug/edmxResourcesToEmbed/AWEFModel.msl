@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="awriteModelStoreContainer" CdmEntityContainer="awriteEntities">
+    <EntitySetMapping Name="AcademicLevels">
+      <EntityTypeMapping TypeName="awriteModel.AcademicLevel">
+        <MappingFragment StoreEntitySet="AcademicLevel">
+          <ScalarProperty Name="idAcadLevel" ColumnName="idAcadLevel" />
+          <ScalarProperty Name="AcadLevelName" ColumnName="AcadLevelName" />
+          <ScalarProperty Name="AcadLevelShort" ColumnName="AcadLevelShort" />
+          <ScalarProperty Name="AcadLevelSort" ColumnName="AcadLevelSort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessments">
+      <EntityTypeMapping TypeName="awriteModel.Assessment">
+        <MappingFragment StoreEntitySet="Assessment">
+          <ScalarProperty Name="idAssessment" ColumnName="idAssessment" />
+          <ScalarProperty Name="AssessmentType_idAssessmentType" ColumnName="AssessmentType_idAssessmentType" />
+          <ScalarProperty Name="AssessmentName" ColumnName="AssessmentName" />
+          <ScalarProperty Name="AssessmentCode" ColumnName="AssessmentCode" />
+          <ScalarProperty Name="Assessment_AssessmentScenario" ColumnName="Assessment_AssessmentScenario" />
+          <ScalarProperty Name="SystemUser_idSystemUser" ColumnName="SystemUser_idSystemUser" />
+          <ScalarProperty Name="Course_idCourse" ColumnName="Course_idCourse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentObjectives">
+      <EntityTypeMapping TypeName="awriteModel.AssessmentObjective">
+        <MappingFragment StoreEntitySet="AssessmentObjective">
+          <ScalarProperty Name="idAssessmentObjective" ColumnName="idAssessmentObjective" />
+          <ScalarProperty Name="AOShort" ColumnName="AOShort" />
+          <ScalarProperty Name="AOName" ColumnName="AOName" />
+          <ScalarProperty Name="AOSortOrder" ColumnName="AOSortOrder" />
+          <ScalarProperty Name="AOFocus" ColumnName="AOFocus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTasks">
+      <EntityTypeMapping TypeName="awriteModel.AssessmentTask">
+        <MappingFragment StoreEntitySet="AssessmentTask">
+          <ScalarProperty Name="idAssessmentTask" ColumnName="idAssessmentTask" />
+          <ScalarProperty Name="Assessment_idAssessment" ColumnName="Assessment_idAssessment" />
+          <ScalarProperty Name="TaskOrderNumber" ColumnName="TaskOrderNumber" />
+          <ScalarProperty Name="AssessTaskName" ColumnName="AssessTaskName" />
+          <ScalarProperty Name="CandidateInstructions" ColumnName="CandidateInstructions" />
+          <ScalarProperty Name="EvidenceRequired" ColumnName="EvidenceRequired" />
+          <ScalarProperty Name="CentreGuidance" ColumnName="CentreGuidance" />
+          <ScalarProperty Name="AssessmentTaskCondition_idAssessmentTaskCondition" ColumnName="AssessmentTaskCondition_idAssessmentTaskCondition" />
+          <ScalarProperty Name="AssessmentTask_TaskTimeEstimate" ColumnName="AssessmentTask_TaskTimeEstimate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTaskConditions">
+      <EntityTypeMapping TypeName="awriteModel.AssessmentTaskCondition">
+        <MappingFragment StoreEntitySet="AssessmentTaskCondition">
+          <ScalarProperty Name="idAssessmentTaskCondition" ColumnName="idAssessmentTaskCondition" />
+          <ScalarProperty Name="AssessTaskConditionFull" ColumnName="AssessTaskConditionFull" />
+          <ScalarProperty Name="AssessTaskConditionShort" ColumnName="AssessTaskConditionShort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTopicRanges">
+      <EntityTypeMapping TypeName="awriteModel.AssessmentTopicRange">
+        <MappingFragment StoreEntitySet="AssessmentTopicRange">
+          <ScalarProperty Name="idAssessmentTopicRange" ColumnName="idAssessmentTopicRange" />
+          <ScalarProperty Name="CUShort" ColumnName="CUShort" />
+          <ScalarProperty Name="LOShort" ColumnName="LOShort" />
+          <ScalarProperty Name="TopicShort" ColumnName="TopicShort" />
+          <ScalarProperty Name="Assessment_idAssessment" ColumnName="Assessment_idAssessment" />
+          <ScalarProperty Name="LOTopic_idLOTopic" ColumnName="LOTopic_idLOTopic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTypes">
+      <EntityTypeMapping TypeName="awriteModel.AssessmentType">
+        <MappingFragment StoreEntitySet="AssessmentType">
+          <ScalarProperty Name="idAssessmentType" ColumnName="idAssessmentType" />
+          <ScalarProperty Name="AssessmentTypeName" ColumnName="AssessmentTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="awriteModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="idCourse" ColumnName="idCourse" />
+          <ScalarProperty Name="QualificationPathway_idQualificationPathway" ColumnName="QualificationPathway_idQualificationPathway" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseUnits">
+      <EntityTypeMapping TypeName="awriteModel.CourseUnit">
+        <MappingFragment StoreEntitySet="CourseUnit">
+          <ScalarProperty Name="idCourseUnit" ColumnName="idCourseUnit" />
+          <ScalarProperty Name="UnitStatus_idUnitStatus" ColumnName="UnitStatus_idUnitStatus" />
+          <ScalarProperty Name="Course_idCourse" ColumnName="Course_idCourse" />
+          <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+          <ScalarProperty Name="CourseUnitTitle" ColumnName="CourseUnitTitle" />
+          <ScalarProperty Name="CUShort" ColumnName="CUShort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Curricula">
+      <EntityTypeMapping TypeName="awriteModel.Curriculum">
+        <MappingFragment StoreEntitySet="Curriculum">
+          <ScalarProperty Name="idCurriculum" ColumnName="idCurriculum" />
+          <ScalarProperty Name="AcademiclLevel_idAcadLevel" ColumnName="AcademiclLevel_idAcadLevel" />
+          <ScalarProperty Name="CurriculumName" ColumnName="CurriculumName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOTopics">
+      <EntityTypeMapping TypeName="awriteModel.LOTopic">
+        <MappingFragment StoreEntitySet="LOTopic">
+          <ScalarProperty Name="idLOTopic" ColumnName="idLOTopic" />
+          <ScalarProperty Name="UnitLearningOutcome_idUnitLearningOutcome" ColumnName="UnitLearningOutcome_idUnitLearningOutcome" />
+          <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+          <ScalarProperty Name="TopicCode" ColumnName="TopicCode" />
+          <ScalarProperty Name="TopicTestingMethod_idTopicTestingMethod" ColumnName="TopicTestingMethod_idTopicTestingMethod" />
+          <ScalarProperty Name="TopicShort" ColumnName="TopicShort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualifications">
+      <EntityTypeMapping TypeName="awriteModel.Qualification">
+        <MappingFragment StoreEntitySet="Qualification">
+          <ScalarProperty Name="idQualification" ColumnName="idQualification" />
+          <ScalarProperty Name="Curriculum_idCurriculum" ColumnName="Curriculum_idCurriculum" />
+          <ScalarProperty Name="QualificationName" ColumnName="QualificationName" />
+          <ScalarProperty Name="QualificationCode" ColumnName="QualificationCode" />
+          <ScalarProperty Name="QualValidFrom" ColumnName="QualValidFrom" />
+          <ScalarProperty Name="QualValidTo" ColumnName="QualValidTo" />
+          <ScalarProperty Name="QualAccreditCode" ColumnName="QualAccreditCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualificationPathways">
+      <EntityTypeMapping TypeName="awriteModel.QualificationPathway">
+        <MappingFragment StoreEntitySet="QualificationPathway">
+          <ScalarProperty Name="idQualificationPathway" ColumnName="idQualificationPathway" />
+          <ScalarProperty Name="Qualification_idQualification" ColumnName="Qualification_idQualification" />
+          <ScalarProperty Name="QualPathwayName" ColumnName="QualPathwayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualUnits">
+      <EntityTypeMapping TypeName="awriteModel.QualUnit">
+        <MappingFragment StoreEntitySet="QualUnit">
+          <ScalarProperty Name="idQualUnit" ColumnName="idQualUnit" />
+          <ScalarProperty Name="Qualification_idQualification" ColumnName="Qualification_idQualification" />
+          <ScalarProperty Name="QualUnitTitle" ColumnName="QualUnitTitle" />
+          <ScalarProperty Name="CGUnitNumber" ColumnName="CGUnitNumber" />
+          <ScalarProperty Name="QualUnitUAN" ColumnName="QualUnitUAN" />
+          <ScalarProperty Name="QualUnitGLH" ColumnName="QualUnitGLH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUsers">
+      <EntityTypeMapping TypeName="awriteModel.SystemUser">
+        <MappingFragment StoreEntitySet="SystemUser">
+          <ScalarProperty Name="idSystemUser" ColumnName="idSystemUser" />
+          <ScalarProperty Name="SystemUserType_idSystemUserType" ColumnName="SystemUserType_idSystemUserType" />
+          <ScalarProperty Name="SystemUserForename" ColumnName="SystemUserForename" />
+          <ScalarProperty Name="SystemUserSurname" ColumnName="SystemUserSurname" />
+          <ScalarProperty Name="SystemUserInitialPassword" ColumnName="SystemUserInitialPassword" />
+          <ScalarProperty Name="SystemUserLoginName" ColumnName="SystemUserLoginName" />
+          <ScalarProperty Name="SystemUserOrganisation" ColumnName="SystemUserOrganisation" />
+          <ScalarProperty Name="SystemUserEmail" ColumnName="SystemUserEmail" />
+          <ScalarProperty Name="SystemUserLandline" ColumnName="SystemUserLandline" />
+          <ScalarProperty Name="SystemUserMobile" ColumnName="SystemUserMobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUserTypes">
+      <EntityTypeMapping TypeName="awriteModel.SystemUserType">
+        <MappingFragment StoreEntitySet="SystemUserType">
+          <ScalarProperty Name="idSystemUserType" ColumnName="idSystemUserType" />
+          <ScalarProperty Name="SystemUserTypeName" ColumnName="SystemUserTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskAOs">
+      <EntityTypeMapping TypeName="awriteModel.TaskAO">
+        <MappingFragment StoreEntitySet="TaskAO">
+          <ScalarProperty Name="idTaskAO" ColumnName="idTaskAO" />
+          <ScalarProperty Name="AssessmentTask_idAssessmentTask" ColumnName="AssessmentTask_idAssessmentTask" />
+          <ScalarProperty Name="AssessmentObjective_idAssessmentObjective" ColumnName="AssessmentObjective_idAssessmentObjective" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskKeywords">
+      <EntityTypeMapping TypeName="awriteModel.TaskKeyword">
+        <MappingFragment StoreEntitySet="TaskKeyword">
+          <ScalarProperty Name="idTaskKeyword" ColumnName="idTaskKeyword" />
+          <ScalarProperty Name="TopicKeyword_idTopicKeyword" ColumnName="TopicKeyword_idTopicKeyword" />
+          <ScalarProperty Name="AssessmentTask_idAssessmentTask" ColumnName="AssessmentTask_idAssessmentTask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskTopicRanges">
+      <EntityTypeMapping TypeName="awriteModel.TaskTopicRange">
+        <MappingFragment StoreEntitySet="TaskTopicRange">
+          <ScalarProperty Name="idTaskTopicRange" ColumnName="idTaskTopicRange" />
+          <ScalarProperty Name="AssessmentTask_idAssessmentTask" ColumnName="AssessmentTask_idAssessmentTask" />
+          <ScalarProperty Name="AssessmentTopicRange_idAssessmentTopic" ColumnName="AssessmentTopicRange_idAssessmentTopic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicKeywords">
+      <EntityTypeMapping TypeName="awriteModel.TopicKeyword">
+        <MappingFragment StoreEntitySet="TopicKeyword">
+          <ScalarProperty Name="idTopicKeyword" ColumnName="idTopicKeyword" />
+          <ScalarProperty Name="LOTopic_idLOTopic" ColumnName="LOTopic_idLOTopic" />
+          <ScalarProperty Name="KeywordText" ColumnName="KeywordText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicTestingMethods">
+      <EntityTypeMapping TypeName="awriteModel.TopicTestingMethod">
+        <MappingFragment StoreEntitySet="TopicTestingMethod">
+          <ScalarProperty Name="idTopicTestingMethod" ColumnName="idTopicTestingMethod" />
+          <ScalarProperty Name="TestingMethodFull" ColumnName="TestingMethodFull" />
+          <ScalarProperty Name="TestingMethodShort" ColumnName="TestingMethodShort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitLearningOutcomes">
+      <EntityTypeMapping TypeName="awriteModel.UnitLearningOutcome">
+        <MappingFragment StoreEntitySet="UnitLearningOutcome">
+          <ScalarProperty Name="idUnitLearningOutcome" ColumnName="idUnitLearningOutcome" />
+          <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+          <ScalarProperty Name="LearningOutsomeName" ColumnName="LearningOutsomeName" />
+          <ScalarProperty Name="LearningOutcomeNumber" ColumnName="LearningOutcomeNumber" />
+          <ScalarProperty Name="LOShort" ColumnName="LOShort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitsAssesseds">
+      <EntityTypeMapping TypeName="awriteModel.UnitsAssessed">
+        <MappingFragment StoreEntitySet="UnitsAssessed">
+          <ScalarProperty Name="idUnitsAssessed" ColumnName="idUnitsAssessed" />
+          <ScalarProperty Name="CourseUnit_idCourseUnit" ColumnName="CourseUnit_idCourseUnit" />
+          <ScalarProperty Name="Assessment_idAssessment" ColumnName="Assessment_idAssessment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitStatus">
+      <EntityTypeMapping TypeName="awriteModel.UnitStatu">
+        <MappingFragment StoreEntitySet="UnitStatus">
+          <ScalarProperty Name="idUnitStatus" ColumnName="idUnitStatus" />
+          <ScalarProperty Name="UnitStatusName" ColumnName="UnitStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAcadLevelByID" FunctionName="awriteModel.Store.GetAcadLevelByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAcadLevelByID_Result">
+          <ScalarProperty Name="idAcadLevel" ColumnName="idAcadLevel" />
+          <ScalarProperty Name="AcadLevelName" ColumnName="AcadLevelName" />
+          <ScalarProperty Name="AcadLevelShort" ColumnName="AcadLevelShort" />
+          <ScalarProperty Name="AcadLevelSort" ColumnName="AcadLevelSort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllCourseUnits" FunctionName="awriteModel.Store.GetAllCourseUnits">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllCourseUnits_Result">
+          <ScalarProperty Name="idCourseUnit" ColumnName="idCourseUnit" />
+          <ScalarProperty Name="UnitStatus_idUnitStatus" ColumnName="UnitStatus_idUnitStatus" />
+          <ScalarProperty Name="Course_idCourse" ColumnName="Course_idCourse" />
+          <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+          <ScalarProperty Name="CourseUnitTitle" ColumnName="CourseUnitTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCoursesByPathway" FunctionName="awriteModel.Store.GetCoursesByPathway">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetCoursesByPathway_Result">
+          <ScalarProperty Name="idCourse" ColumnName="idCourse" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCourseUnitID" FunctionName="awriteModel.Store.GetCourseUnitID" />
+    <FunctionImportMapping FunctionImportName="GetCourseUnitsByCourse" FunctionName="awriteModel.Store.GetCourseUnitsByCourse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetCourseUnitsByCourse_Result">
+          <ScalarProperty Name="idCourseUnit" ColumnName="idCourseUnit" />
+          <ScalarProperty Name="CourseUnitTitle" ColumnName="CourseUnitTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCourseUnitsByCourseAllInfo" FunctionName="awriteModel.Store.GetCourseUnitsByCourseAllInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetCourseUnitsByCourseAllInfo_Result">
+          <ScalarProperty Name="idCourseUnit" ColumnName="idCourseUnit" />
+          <ScalarProperty Name="UnitStatus_idUnitStatus" ColumnName="UnitStatus_idUnitStatus" />
+          <ScalarProperty Name="Course_idCourse" ColumnName="Course_idCourse" />
+          <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+          <ScalarProperty Name="CourseUnitTitle" ColumnName="CourseUnitTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCurriculumByLevel" FunctionName="awriteModel.Store.GetCurriculumByLevel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetCurriculumByLevel_Result">
+          <ScalarProperty Name="idCurriculum" ColumnName="idCurriculum" />
+          <ScalarProperty Name="CurriculumName" ColumnName="CurriculumName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPathwaysByQualification" FunctionName="awriteModel.Store.GetPathwaysByQualification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetPathwaysByQualification_Result">
+          <ScalarProperty Name="idQualificationPathway" ColumnName="idQualificationPathway" />
+          <ScalarProperty Name="QualPathwayName" ColumnName="QualPathwayName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetQualificationByCurriculum" FunctionName="awriteModel.Store.GetQualificationByCurriculum">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetQualificationByCurriculum_Result">
+          <ScalarProperty Name="idQualification" ColumnName="idQualification" />
+          <ScalarProperty Name="QualificationName" ColumnName="QualificationName" />
+          <ScalarProperty Name="QualificationCode" ColumnName="QualificationCode" />
+          <ScalarProperty Name="QualValidFrom" ColumnName="QualValidFrom" />
+          <ScalarProperty Name="QualValidTo" ColumnName="QualValidTo" />
+          <ScalarProperty Name="QualAccreditCode" ColumnName="QualAccreditCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSystemUserByLogin" FunctionName="awriteModel.Store.GetSystemUserByLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetSystemUserByLogin_Result">
+          <ScalarProperty Name="idSystemUser" ColumnName="idSystemUser" />
+          <ScalarProperty Name="SystemUserType_idSystemUserType" ColumnName="SystemUserType_idSystemUserType" />
+          <ScalarProperty Name="SystemUserForename" ColumnName="SystemUserForename" />
+          <ScalarProperty Name="SystemUserSurname" ColumnName="SystemUserSurname" />
+          <ScalarProperty Name="SystemUserInitialPassword" ColumnName="SystemUserInitialPassword" />
+          <ScalarProperty Name="SystemUserLoginName" ColumnName="SystemUserLoginName" />
+          <ScalarProperty Name="SystemUserOrganisation" ColumnName="SystemUserOrganisation" />
+          <ScalarProperty Name="SystemUserEmail" ColumnName="SystemUserEmail" />
+          <ScalarProperty Name="SystemUserLandline" ColumnName="SystemUserLandline" />
+          <ScalarProperty Name="SystemUserMobile" ColumnName="SystemUserMobile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

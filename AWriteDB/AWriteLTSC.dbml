@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="awrite" Class="AWriteLTSCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ykpfrfv5g2.database.windows.net;Initial Catalog=awrite;Persist Security Info=True;User ID=paz@ykpfrfv5g2" SettingsObjectName="AWriteDB.Properties.Settings" SettingsPropertyName="awriteConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AcademicLevel" Member="AcademicLevels">
+    <Type Name="AcademicLevel">
+      <Column Name="idAcadLevel" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AcadLevelName" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="AcadLevelShort" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="AcadLevelSort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AcademicLevel_Curriculum" Member="Curriculums" ThisKey="idAcadLevel" OtherKey="AcademiclLevel_idAcadLevel" Type="Curriculum" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnitStatus" Member="UnitStatus">
+    <Type Name="UnitStatus">
+      <Column Name="idUnitStatus" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnitStatusName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="UnitStatus_CourseUnit" Member="CourseUnits" ThisKey="idUnitStatus" OtherKey="UnitStatus_idUnitStatus" Type="CourseUnit" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Assessment" Member="Assessments">
+    <Type Name="Assessment">
+      <Column Name="idAssessment" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssessmentType_idAssessmentType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssessmentName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AssessmentCode" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="Assessment_AssessmentScenario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SystemUser_idSystemUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Course_idCourse" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Assessment_AssessmentTask" Member="AssessmentTasks" ThisKey="idAssessment" OtherKey="Assessment_idAssessment" Type="AssessmentTask" />
+      <Association Name="Assessment_UnitsAssessed" Member="UnitsAssesseds" ThisKey="idAssessment" OtherKey="Assessment_idAssessment" Type="UnitsAssessed" />
+      <Association Name="AssessmentType_Assessment" Member="AssessmentType" ThisKey="AssessmentType_idAssessmentType" OtherKey="idAssessmentType" Type="AssessmentType" IsForeignKey="true" />
+      <Association Name="Course_Assessment" Member="Course" ThisKey="Course_idCourse" OtherKey="idCourse" Type="Course" IsForeignKey="true" />
+      <Association Name="SystemUser_Assessment" Member="SystemUser" ThisKey="SystemUser_idSystemUser" OtherKey="idSystemUser" Type="SystemUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssessmentObjective" Member="AssessmentObjectives">
+    <Type Name="AssessmentObjective">
+      <Column Name="idAssessmentObjective" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AOShort" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="AOName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AOSortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AOFocus" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="AssessmentObjective_TaskAO" Member="TaskAOs" ThisKey="idAssessmentObjective" OtherKey="AssessmentObjective_idAssessmentObjective" Type="TaskAO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssessmentTask" Member="AssessmentTasks">
+    <Type Name="AssessmentTask">
+      <Column Name="idAssessmentTask" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Assessment_idAssessment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskOrderNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssessTaskName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CandidateInstructions" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EvidenceRequired" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CentreGuidance" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssessmentTaskCondition_idAssessmentTaskCondition" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssessmentTask_TaskTimeEstimate" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="AssessmentTask_TaskAO" Member="TaskAOs" ThisKey="idAssessmentTask" OtherKey="AssessmentTask_idAssessmentTask" Type="TaskAO" />
+      <Association Name="AssessmentTask_TaskKeyword" Member="TaskKeywords" ThisKey="idAssessmentTask" OtherKey="AssessmentTask_idAssessmentTask" Type="TaskKeyword" />
+      <Association Name="AssessmentTask_TaskTopicRange" Member="TaskTopicRanges" ThisKey="idAssessmentTask" OtherKey="AssessmentTask_idAssessmentTask" Type="TaskTopicRange" />
+      <Association Name="Assessment_AssessmentTask" Member="Assessment" ThisKey="Assessment_idAssessment" OtherKey="idAssessment" Type="Assessment" IsForeignKey="true" />
+      <Association Name="AssessmentTaskCondition_AssessmentTask" Member="AssessmentTaskCondition" ThisKey="AssessmentTaskCondition_idAssessmentTaskCondition" OtherKey="idAssessmentTaskCondition" Type="AssessmentTaskCondition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssessmentTaskCondition" Member="AssessmentTaskConditions">
+    <Type Name="AssessmentTaskCondition">
+      <Column Name="idAssessmentTaskCondition" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssessTaskConditionFull" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AssessTaskConditionShort" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="AssessmentTaskCondition_AssessmentTask" Member="AssessmentTasks" ThisKey="idAssessmentTaskCondition" OtherKey="AssessmentTaskCondition_idAssessmentTaskCondition" Type="AssessmentTask" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssessmentType" Member="AssessmentTypes">
+    <Type Name="AssessmentType">
+      <Column Name="idAssessmentType" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssessmentTypeName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="AssessmentType_Assessment" Member="Assessments" ThisKey="idAssessmentType" OtherKey="AssessmentType_idAssessmentType" Type="Assessment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Course" Member="Courses">
+    <Type Name="Course">
+      <Column Name="idCourse" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QualificationPathway_idQualificationPathway" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Assessment" Member="Assessments" ThisKey="idCourse" OtherKey="Course_idCourse" Type="Assessment" />
+      <Association Name="Course_CourseUnit" Member="CourseUnits" ThisKey="idCourse" OtherKey="Course_idCourse" Type="CourseUnit" />
+      <Association Name="QualificationPathway_Course" Member="QualificationPathway" ThisKey="QualificationPathway_idQualificationPathway" OtherKey="idQualificationPathway" Type="QualificationPathway" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseUnit" Member="CourseUnits">
+    <Type Name="CourseUnit">
+      <Column Name="idCourseUnit" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnitStatus_idUnitStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Course_idCourse" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualUnit_idQualUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseUnitTitle" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="CourseUnit_UnitsAssessed" Member="UnitsAssesseds" ThisKey="idCourseUnit" OtherKey="CourseUnit_idCourseUnit" Type="UnitsAssessed" />
+      <Association Name="Course_CourseUnit" Member="Course" ThisKey="Course_idCourse" OtherKey="idCourse" Type="Course" IsForeignKey="true" />
+      <Association Name="UnitStatus_CourseUnit" Member="UnitStatus" ThisKey="UnitStatus_idUnitStatus" OtherKey="idUnitStatus" Type="UnitStatus" IsForeignKey="true" />
+      <Association Name="QualUnit_CourseUnit" Member="QualUnit" ThisKey="QualUnit_idQualUnit" OtherKey="idQualUnit" Type="QualUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Curriculum" Member="Curriculums">
+    <Type Name="Curriculum">
+      <Column Name="idCurriculum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AcademiclLevel_idAcadLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurriculumName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Curriculum_Qualification" Member="Qualifications" ThisKey="idCurriculum" OtherKey="Curriculum_idCurriculum" Type="Qualification" />
+      <Association Name="AcademicLevel_Curriculum" Member="AcademicLevel" ThisKey="AcademiclLevel_idAcadLevel" OtherKey="idAcadLevel" Type="AcademicLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOTopic" Member="LOTopics">
+    <Type Name="LOTopic">
+      <Column Name="idLOTopic" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnitLearningOutcome_idUnitLearningOutcome" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TopicName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TopicCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TopicTestingMethod_idTopicTestingMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LOTopic_TaskTopicRange" Member="TaskTopicRanges" ThisKey="idLOTopic" OtherKey="LOTopic_idLOTopic" Type="TaskTopicRange" />
+      <Association Name="LOTopic_TopicKeyword" Member="TopicKeywords" ThisKey="idLOTopic" OtherKey="LOTopic_idLOTopic" Type="TopicKeyword" />
+      <Association Name="TopicTestingMethod_LOTopic" Member="TopicTestingMethod" ThisKey="TopicTestingMethod_idTopicTestingMethod" OtherKey="idTopicTestingMethod" Type="TopicTestingMethod" IsForeignKey="true" />
+      <Association Name="UnitLearningOutcome_LOTopic" Member="UnitLearningOutcome" ThisKey="UnitLearningOutcome_idUnitLearningOutcome" OtherKey="idUnitLearningOutcome" Type="UnitLearningOutcome" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Qualification" Member="Qualifications">
+    <Type Name="Qualification">
+      <Column Name="idQualification" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Curriculum_idCurriculum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualificationName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="QualificationCode" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="QualValidFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QualValidTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QualAccreditCode" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Association Name="Qualification_QualificationPathway" Member="QualificationPathways" ThisKey="idQualification" OtherKey="Qualification_idQualification" Type="QualificationPathway" />
+      <Association Name="Qualification_QualUnit" Member="QualUnits" ThisKey="idQualification" OtherKey="Qualification_idQualification" Type="QualUnit" />
+      <Association Name="Curriculum_Qualification" Member="Curriculum" ThisKey="Curriculum_idCurriculum" OtherKey="idCurriculum" Type="Curriculum" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QualificationPathway" Member="QualificationPathways">
+    <Type Name="QualificationPathway">
+      <Column Name="idQualificationPathway" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Qualification_idQualification" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualPathwayName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="QualificationPathway_Course" Member="Courses" ThisKey="idQualificationPathway" OtherKey="QualificationPathway_idQualificationPathway" Type="Course" />
+      <Association Name="Qualification_QualificationPathway" Member="Qualification" ThisKey="Qualification_idQualification" OtherKey="idQualification" Type="Qualification" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QualUnit" Member="QualUnits">
+    <Type Name="QualUnit">
+      <Column Name="idQualUnit" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Qualification_idQualification" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualUnitTitle" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CGUnitNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualUnitUAN" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="QualUnitGLH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="QualUnit_CourseUnit" Member="CourseUnits" ThisKey="idQualUnit" OtherKey="QualUnit_idQualUnit" Type="CourseUnit" />
+      <Association Name="QualUnit_UnitLearningOutcome" Member="UnitLearningOutcomes" ThisKey="idQualUnit" OtherKey="QualUnit_idQualUnit" Type="UnitLearningOutcome" />
+      <Association Name="Qualification_QualUnit" Member="Qualification" ThisKey="Qualification_idQualification" OtherKey="idQualification" Type="Qualification" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SystemUser" Member="SystemUsers">
+    <Type Name="SystemUser">
+      <Column Name="idSystemUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemUserType_idSystemUserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemUserForename" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserSurname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserInitialPassword" Type="System.String" DbType="VarChar(266)" CanBeNull="true" />
+      <Column Name="SystemUserLoginName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SystemUserOrganisation" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SystemUserEmail" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserLandline" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SystemUserMobile" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="SystemUser_Assessment" Member="Assessments" ThisKey="idSystemUser" OtherKey="SystemUser_idSystemUser" Type="Assessment" />
+      <Association Name="SystemUserType_SystemUser" Member="SystemUserType" ThisKey="SystemUserType_idSystemUserType" OtherKey="idSystemUserType" Type="SystemUserType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SystemUserType" Member="SystemUserTypes">
+    <Type Name="SystemUserType">
+      <Column Name="idSystemUserType" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemUserTypeName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="SystemUserType_SystemUser" Member="SystemUsers" ThisKey="idSystemUserType" OtherKey="SystemUserType_idSystemUserType" Type="SystemUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskAO" Member="TaskAOs">
+    <Type Name="TaskAO">
+      <Column Name="idTaskAO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssessmentTask_idAssessmentTask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssessmentObjective_idAssessmentObjective" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AssessmentObjective_TaskAO" Member="AssessmentObjective" ThisKey="AssessmentObjective_idAssessmentObjective" OtherKey="idAssessmentObjective" Type="AssessmentObjective" IsForeignKey="true" />
+      <Association Name="AssessmentTask_TaskAO" Member="AssessmentTask" ThisKey="AssessmentTask_idAssessmentTask" OtherKey="idAssessmentTask" Type="AssessmentTask" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskKeyword" Member="TaskKeywords">
+    <Type Name="TaskKeyword">
+      <Column Name="idTaskKeyword" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TopicKeyword_idTopicKeyword" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssessmentTask_idAssessmentTask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AssessmentTask_TaskKeyword" Member="AssessmentTask" ThisKey="AssessmentTask_idAssessmentTask" OtherKey="idAssessmentTask" Type="AssessmentTask" IsForeignKey="true" />
+      <Association Name="TopicKeyword_TaskKeyword" Member="TopicKeyword" ThisKey="TopicKeyword_idTopicKeyword" OtherKey="idTopicKeyword" Type="TopicKeyword" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskTopicRange" Member="TaskTopicRanges">
+    <Type Name="TaskTopicRange">
+      <Column Name="idTaskTopicRange" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOTopic_idLOTopic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssessmentTask_idAssessmentTask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AssessmentTask_TaskTopicRange" Member="AssessmentTask" ThisKey="AssessmentTask_idAssessmentTask" OtherKey="idAssessmentTask" Type="AssessmentTask" IsForeignKey="true" />
+      <Association Name="LOTopic_TaskTopicRange" Member="LOTopic" ThisKey="LOTopic_idLOTopic" OtherKey="idLOTopic" Type="LOTopic" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TopicKeyword" Member="TopicKeywords">
+    <Type Name="TopicKeyword">
+      <Column Name="idTopicKeyword" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOTopic_idLOTopic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KeywordText" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="TopicKeyword_TaskKeyword" Member="TaskKeywords" ThisKey="idTopicKeyword" OtherKey="TopicKeyword_idTopicKeyword" Type="TaskKeyword" />
+      <Association Name="LOTopic_TopicKeyword" Member="LOTopic" ThisKey="LOTopic_idLOTopic" OtherKey="idLOTopic" Type="LOTopic" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TopicTestingMethod" Member="TopicTestingMethods">
+    <Type Name="TopicTestingMethod">
+      <Column Name="idTopicTestingMethod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestingMethodFull" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TestingMethodShort" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="TopicTestingMethod_LOTopic" Member="LOTopics" ThisKey="idTopicTestingMethod" OtherKey="TopicTestingMethod_idTopicTestingMethod" Type="LOTopic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnitLearningOutcome" Member="UnitLearningOutcomes">
+    <Type Name="UnitLearningOutcome">
+      <Column Name="idUnitLearningOutcome" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QualUnit_idQualUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LearningOutsomeName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LearningOutcomeNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UnitLearningOutcome_LOTopic" Member="LOTopics" ThisKey="idUnitLearningOutcome" OtherKey="UnitLearningOutcome_idUnitLearningOutcome" Type="LOTopic" />
+      <Association Name="QualUnit_UnitLearningOutcome" Member="QualUnit" ThisKey="QualUnit_idQualUnit" OtherKey="idQualUnit" Type="QualUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnitsAssessed" Member="UnitsAssesseds">
+    <Type Name="UnitsAssessed">
+      <Column Name="idUnitsAssessed" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseUnit_idCourseUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Assessment_idAssessment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Assessment_UnitsAssessed" Member="Assessment" ThisKey="Assessment_idAssessment" OtherKey="idAssessment" Type="Assessment" IsForeignKey="true" />
+      <Association Name="CourseUnit_UnitsAssessed" Member="CourseUnit" ThisKey="CourseUnit_idCourseUnit" OtherKey="idCourseUnit" Type="CourseUnit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetAcadLevelByID" Method="GetAcadLevelByID">
+    <Parameter Name="LevelID" Parameter="levelID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetAcadLevelByIDResult">
+      <Column Name="idAcadLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AcadLevelName" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="AcadLevelShort" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="AcadLevelSort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSystemUserByLogin" Method="GetSystemUserByLogin">
+    <Parameter Name="systemUserLoginName" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="GetSystemUserByLoginResult">
+      <Column Name="idSystemUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserType_idSystemUserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemUserForename" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserSurname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserInitialPassword" Type="System.String" DbType="VarChar(266)" CanBeNull="true" />
+      <Column Name="SystemUserLoginName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SystemUserOrganisation" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SystemUserEmail" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemUserLandline" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SystemUserMobile" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllCourseUnits" Method="GetAllCourseUnits">
+    <ElementType Name="GetAllCourseUnitsResult">
+      <Column Name="idCourseUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitStatus_idUnitStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Course_idCourse" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualUnit_idQualUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseUnitTitle" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCoursesByPathway" Method="GetCoursesByPathway">
+    <Parameter Name="idPathway" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetCoursesByPathwayResult">
+      <Column Name="idCourse" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCourseUnitsByCourse" Method="GetCourseUnitsByCourse">
+    <Parameter Name="idCourse" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetCourseUnitsByCourseResult">
+      <Column Name="idCourseUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseUnitTitle" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCourseUnitsByCourseAllInfo" Method="GetCourseUnitsByCourseAllInfo">
+    <Parameter Name="idCourse" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetCourseUnitsByCourseAllInfoResult">
+      <Column Name="idCourseUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitStatus_idUnitStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Course_idCourse" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualUnit_idQualUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseUnitTitle" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCurriculumByLevel" Method="GetCurriculumByLevel">
+    <Parameter Name="idAcadLevel" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetCurriculumByLevelResult">
+      <Column Name="idCurriculum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurriculumName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPathwaysByQualification" Method="GetPathwaysByQualification">
+    <Parameter Name="idQualification" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetPathwaysByQualificationResult">
+      <Column Name="idQualificationPathway" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualPathwayName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetQualificationByCurriculum" Method="GetQualificationByCurriculum">
+    <Parameter Name="idCurriculum" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetQualificationByCurriculumResult">
+      <Column Name="idQualification" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QualificationName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="QualificationCode" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="QualValidFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QualValidTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QualAccreditCode" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

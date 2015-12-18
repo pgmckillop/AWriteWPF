@@ -1,0 +1,166 @@
+﻿<Page x:Class="AWrite.AssessmentTasks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AWrite"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="AssessmentTasks">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" /> <!-- Title-->
+            <RowDefinition Height="*" /> <!-- Header set 1-->
+            <RowDefinition Height="4*" /> <!-- List set 1-->
+            <RowDefinition Height="*" /> <!-- Header set 2-->
+            <RowDefinition Height="4*" /> <!-- List set 2-->
+            <RowDefinition Height="*" /> <!-- Header set 3-->
+            <RowDefinition Height="4*" /> <!-- List set 3-->
+            <RowDefinition Height="*" /> <!-- Footer-->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="25"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="5"
+                   HorizontalAlignment="Stretch"
+                   TextAlignment="Center"
+                   Background="Beige">
+            Assignment of Topics to Assesment Tasks
+        </TextBlock>
+
+        <TextBlock Margin="10,5,10,5"
+                   Grid.Row="1"
+                   TextWrapping="Wrap"
+                   Background="Beige"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch">
+            Select topics from the list below and drag to tasks where they will be assessed
+        </TextBlock>
+        
+        <TreeView Name="tvTopics"
+                  Margin="10,5,10,5"
+                  Background="LightBlue"
+                  Grid.Row="2"
+                  Grid.RowSpan="5" />
+
+        <!-- Task Labels -->
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="15"
+                   Grid.Row="1"
+                   Grid.Column="2"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Background="BlanchedAlmond"
+                   VerticalAlignment="Stretch">
+            Topics in Task 1
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="15"
+                   Grid.Row="1"
+                   Grid.Column="4"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Background="BlanchedAlmond"
+                   VerticalAlignment="Stretch">
+            Topics in Task 2
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="15"
+                   Grid.Row="3"
+                   Grid.Column="2"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Background="BlanchedAlmond"
+                   VerticalAlignment="Stretch">
+            Topics in Task 3
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="15"
+                   Grid.Row="3"
+                   Grid.Column="4"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Background="BlanchedAlmond"
+                   VerticalAlignment="Stretch">
+            Topics in Task 4
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="15"
+                   Grid.Row="5"
+                   Grid.Column="2"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Background="BlanchedAlmond"
+                   VerticalAlignment="Stretch">
+            Topics in Task 5
+        </TextBlock>
+        <TextBlock Margin="10,5,10,5"
+                   FontSize="15"
+                   Grid.Row="5"
+                   Grid.Column="4"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Background="BlanchedAlmond"
+                   VerticalAlignment="Stretch">
+            Topics in Task 6
+        </TextBlock>
+        
+        <ListView Name="lvTask1Topics"
+                  Margin="10,5,10,5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.Column="2"
+                  Grid.Row="2" />
+        <ListView Name="lvTask2Topics"
+                  Margin="10,5,10,5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.Column="4"
+                  Grid.Row="2" />
+        <ListView Name="lvTask3Topics"
+                  Margin="10,5,10,5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.Column="2"
+                  Grid.Row="4" />
+        <ListView Name="lvTask4Topics"
+                  Margin="10,5,10,5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.Column="4"
+                  Grid.Row="4" />
+        <ListView Name="lvTask5Topics"
+                  Margin="10,5,10,5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.Column="2"
+                  Grid.Row="6" />
+        <ListView Name="lvTask6Topics"
+                  Margin="10,5,10,5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Grid.Column="4"
+                  Grid.Row="6" />
+        
+        <Button Name="btnToTask1" 
+                Margin="10,5,10,5"
+                Grid.Column="4"
+                Grid.Row="7"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="To task edit screens"
+                Click="btnToTask1_Click" />
+                
+
+    </Grid>
+</Page>

@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 22.25, 19.875" name="AWriteLTSC">
+  <DataContextMoniker Name="/AWriteLTSCDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6416e131-ee19-422c-938d-88610f56327a" absoluteBounds="0.75, 7.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/AcademicLevel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e042035d-dd83-460a-b5f3-ccb730b6f452" absoluteBounds="0.765, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bee3ea74-726e-4486-8639-c43ea1b93e35" absoluteBounds="11.75, 18.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/UnitStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9084e750-b15f-493a-bcc5-e9282fe04fb3" absoluteBounds="11.765, 18.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="975b07fd-b54f-4cf6-a621-88b984f77df7" absoluteBounds="14.5, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/Assessment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1fa2138-69e3-4ec9-9147-7552b755a4c8" absoluteBounds="14.515, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ecac51c-a129-4742-b2ae-0431ef21a33f" absoluteBounds="17.25, 7.75, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/AssessmentObjective" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fbceb0b-c005-4c49-8249-396faf61dc9d" absoluteBounds="17.265, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="471cc5f3-38eb-45dd-b564-e5673569d9d8" absoluteBounds="17.25, 1.375, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/AssessmentTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4c4053c-bc96-4c79-bb31-a858e51afd93" absoluteBounds="17.265, 1.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d74681ff-10d2-4cda-af2b-2d5da5a0b146" absoluteBounds="14.5, 1, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/AssessmentTaskCondition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cb4c4ea-0052-48ef-b05a-eb8a21e510d7" absoluteBounds="14.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc5c8021-10d6-493d-93ba-82691f07849f" absoluteBounds="11.75, 2.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/AssessmentType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="481cf967-8426-4487-b756-1407f6548529" absoluteBounds="11.765, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="457fb029-5eed-416a-b0d3-e48e8d8ed7a5" absoluteBounds="11.75, 6, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/Course" />
+      <nestedChildShapes>
+        <elementListCompartment Id="44f01c76-919f-4dca-9d45-eef75e019469" absoluteBounds="11.765, 6.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e255ba1d-b1dc-44da-b2ba-75ebbb9a7895" absoluteBounds="14.5, 7.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/CourseUnit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81d3c8d7-41f0-428f-892f-96e65f063741" absoluteBounds="14.515, 7.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b138cbeb-db66-4ecb-9ce5-178b33972351" absoluteBounds="3.5, 7.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/Curriculum" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2541223-2793-4fdd-ab6a-1c0871fcb8d9" absoluteBounds="3.515, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc302ef4-c8d6-4751-a9bf-b33405b6b36c" absoluteBounds="14.5, 10.125, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/LOTopic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03c91d0d-1eaa-4d70-aed9-cc1446d68398" absoluteBounds="14.515, 10.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="895c3593-5379-4ef6-a07e-44e298e7fb7e" absoluteBounds="6.25, 6.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/Qualification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="379fd672-0293-46b0-ac18-9cd23159c881" absoluteBounds="6.265, 7.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd25eb2b-15ac-416b-a07c-4d6b2a4a7e12" absoluteBounds="9, 6, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/QualificationPathway" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db30d278-ecc1-4df4-b169-a79060e87a79" absoluteBounds="9.015, 6.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a43b93ec-fee4-4187-b0be-d044a708192d" absoluteBounds="9, 8.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/QualUnit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cc09dac-43ae-4304-8684-7f0f2d1f01a0" absoluteBounds="9.015, 8.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd95aa95-a64c-4246-b7a5-3f763638e018" absoluteBounds="11.75, 11.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/SystemUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fae4a77a-3325-447b-b26c-efcf00bc97b4" absoluteBounds="11.765, 11.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffcad8bc-4355-4f1a-8d7c-13650a54d12e" absoluteBounds="9, 12, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/SystemUserType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16210488-54a3-4a1b-a0c1-0ffce14ce259" absoluteBounds="9.015, 12.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b87fc10-69ff-45f8-9cee-8588e8d9b282" absoluteBounds="20, 2, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/TaskAO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13e3ae5a-b2d8-4ef4-b425-74aeba334d32" absoluteBounds="20.015, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f2f5478-1d9d-4146-aee1-cc16a400beed" absoluteBounds="20, 5.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/TaskKeyword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcbaec13-d37c-4da0-bb56-55f9275c817f" absoluteBounds="20.015, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d27de39-ac37-456d-b61f-3dc9069da3a2" absoluteBounds="20, 9, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/TaskTopicRange" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8f86cfe-f336-456d-96d9-0dc23e547bbc" absoluteBounds="20.015, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9dc7ebc-e4b4-412a-a15b-7871d24cc0a6" absoluteBounds="17.25, 10.375, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/TopicKeyword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e13a2dba-00c5-4cfe-ba86-695bb4de4b9c" absoluteBounds="17.265, 10.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5c02152e-aaf7-49ea-b450-ebd0075a407b" absoluteBounds="11.75, 15.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/TopicTestingMethod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20dc1b02-43cf-4b84-9857-02698841c181" absoluteBounds="11.765, 15.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="089ba50b-e6c9-4a1e-9678-b4105bb3255c" absoluteBounds="11.75, 8.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/UnitLearningOutcome" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7911af79-df24-441c-a9ea-02a65dfc6dfb" absoluteBounds="11.765, 8.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0dbb503-5ff9-446e-b837-14eeadf3a31b" absoluteBounds="17.25, 5.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AWriteLTSCDataContext/UnitsAssessed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dca1dfa3-5882-4da0-a00f-9fe8c3f927e0" absoluteBounds="17.265, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.5 : 3.70755126953125); (17.25 : 3.70755126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Assessment/Assessment_AssessmentTask" />
+      <nodes>
+        <classShapeMoniker Id="975b07fd-b54f-4cf6-a621-88b984f77df7" />
+        <classShapeMoniker Id="471cc5f3-38eb-45dd-b564-e5673569d9d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 1.88064697265625); (17.25 : 1.88064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AssessmentTaskCondition/AssessmentTaskCondition_AssessmentTask" />
+      <nodes>
+        <classShapeMoniker Id="d74681ff-10d2-4cda-af2b-2d5da5a0b146" />
+        <classShapeMoniker Id="471cc5f3-38eb-45dd-b564-e5673569d9d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 3.44399251302083); (12.75 : 4.57774983723958); (14.2291666666667 : 4.57774983723958 : JumpStart); (14.3958333333333 : 4.57774983723958 : JumpEnd); (14.5 : 4.57774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AssessmentType/AssessmentType_Assessment" />
+      <nodes>
+        <classShapeMoniker Id="bc5c8021-10d6-493d-93ba-82691f07849f" />
+        <classShapeMoniker Id="975b07fd-b54f-4cf6-a621-88b984f77df7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.25 : 6); (13.25 : 5.14787725585937); (14.2291666666667 : 5.14787725585937 : JumpStart); (14.3958333333333 : 5.14787725585937 : JumpEnd); (14.5 : 5.14787725585937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Course/Course_Assessment" />
+      <nodes>
+        <classShapeMoniker Id="457fb029-5eed-416a-b0d3-e48e8d8ed7a5" />
+        <classShapeMoniker Id="975b07fd-b54f-4cf6-a621-88b984f77df7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 6.5624995); (14.2291666666667 : 6.5624995 : JumpStart); (14.3958333333333 : 6.5624995 : JumpEnd); (15.5 : 6.5624995); (15.5 : 7.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Course/Course_CourseUnit" />
+      <nodes>
+        <classShapeMoniker Id="457fb029-5eed-416a-b0d3-e48e8d8ed7a5" />
+        <classShapeMoniker Id="e255ba1d-b1dc-44da-b2ba-75ebbb9a7895" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 18.375); (14.125 : 18); (14.125 : 8.01044840494792); (14.2291666666667 : 8.01044840494792 : JumpStart); (14.3958333333333 : 8.01044840494792 : JumpEnd); (14.5 : 8.01044840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/UnitStatus/UnitStatus_CourseUnit" />
+      <nodes>
+        <classShapeMoniker Id="bee3ea74-726e-4486-8639-c43ea1b93e35" />
+        <classShapeMoniker Id="e255ba1d-b1dc-44da-b2ba-75ebbb9a7895" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.94314697265625); (3.5 : 7.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AcademicLevel/AcademicLevel_Curriculum" />
+      <nodes>
+        <classShapeMoniker Id="6416e131-ee19-422c-938d-88610f56327a" />
+        <classShapeMoniker Id="b138cbeb-db66-4ecb-9ce5-178b33972351" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.94314697265625); (6.25 : 7.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Curriculum/Curriculum_Qualification" />
+      <nodes>
+        <classShapeMoniker Id="b138cbeb-db66-4ecb-9ce5-178b33972351" />
+        <classShapeMoniker Id="895c3593-5379-4ef6-a07e-44e298e7fb7e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 6.69314697265625); (11.75 : 6.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/QualificationPathway/QualificationPathway_Course" />
+      <nodes>
+        <classShapeMoniker Id="fd25eb2b-15ac-416b-a07c-4d6b2a4a7e12" />
+        <classShapeMoniker Id="457fb029-5eed-416a-b0d3-e48e8d8ed7a5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 7.13064697265625); (9 : 7.13064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Qualification/Qualification_QualificationPathway" />
+      <nodes>
+        <classShapeMoniker Id="895c3593-5379-4ef6-a07e-44e298e7fb7e" />
+        <classShapeMoniker Id="fd25eb2b-15ac-416b-a07c-4d6b2a4a7e12" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 8.15625); (14.0416666666667 : 8.15625 : JumpStart); (14.2083333333333 : 8.15625 : JumpEnd); (14.2291666666667 : 8.15625 : JumpStart); (14.3958333333333 : 8.15625 : JumpEnd); (14.5 : 8.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/QualUnit/QualUnit_CourseUnit" />
+      <nodes>
+        <classShapeMoniker Id="a43b93ec-fee4-4187-b0be-d044a708192d" />
+        <classShapeMoniker Id="e255ba1d-b1dc-44da-b2ba-75ebbb9a7895" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.57774983723958); (9 : 8.57774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Qualification/Qualification_QualUnit" />
+      <nodes>
+        <classShapeMoniker Id="895c3593-5379-4ef6-a07e-44e298e7fb7e" />
+        <classShapeMoniker Id="a43b93ec-fee4-4187-b0be-d044a708192d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 11.3115374615385); (14.0660744349011 : 10.9954630266373 : JumpStart); (14.1839255650989 : 10.8776118964396 : JumpEnd); (14.3125 : 10.7490374615385); (14.3125 : 4.00762291861979); (14.5 : 4.00762291861979)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/SystemUser/SystemUser_Assessment" />
+      <nodes>
+        <classShapeMoniker Id="bd95aa95-a64c-4246-b7a5-3f763638e018" />
+        <classShapeMoniker Id="975b07fd-b54f-4cf6-a621-88b984f77df7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 12.5969962565104); (11.75 : 12.5969962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/SystemUserType/SystemUserType_SystemUser" />
+      <nodes>
+        <classShapeMoniker Id="ffcad8bc-4355-4f1a-8d7c-13650a54d12e" />
+        <classShapeMoniker Id="bd95aa95-a64c-4246-b7a5-3f763638e018" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 7.75); (19.625 : 7.375); (19.625 : 2.69314697265625); (20 : 2.69314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AssessmentObjective/AssessmentObjective_TaskAO" />
+      <nodes>
+        <classShapeMoniker Id="3ecac51c-a129-4742-b2ae-0431ef21a33f" />
+        <classShapeMoniker Id="7b87fc10-69ff-45f8-9cee-8588e8d9b282" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 2.28407348632813); (20 : 2.28407348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AssessmentTask/AssessmentTask_TaskAO" />
+      <nodes>
+        <classShapeMoniker Id="471cc5f3-38eb-45dd-b564-e5673569d9d8" />
+        <classShapeMoniker Id="7b87fc10-69ff-45f8-9cee-8588e8d9b282" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 3.88125538521635); (19.5660744349011 : 4.19732982011747 : JumpStart); (19.6839255650989 : 4.31518095031522 : JumpEnd); (19.875 : 4.50625538521635); (19.875 : 6.56814697265625); (20 : 6.56814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AssessmentTask/AssessmentTask_TaskKeyword" />
+      <nodes>
+        <classShapeMoniker Id="471cc5f3-38eb-45dd-b564-e5673569d9d8" />
+        <classShapeMoniker Id="3f2f5478-1d9d-4146-aee1-cc16a400beed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 3.88587076983173); (19.5660744349011 : 4.20194520473285 : JumpStart); (19.6839255650989 : 4.31979633493061 : JumpEnd); (19.8125 : 4.44837076983173); (19.8125 : 9.69314697265625); (20 : 9.69314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/AssessmentTask/AssessmentTask_TaskTopicRange" />
+      <nodes>
+        <classShapeMoniker Id="471cc5f3-38eb-45dd-b564-e5673569d9d8" />
+        <classShapeMoniker Id="1d27de39-ac37-456d-b61f-3dc9069da3a2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 11.8598453776042); (21 : 11.8598453776042); (21 : 10.3862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/LOTopic/LOTopic_TaskTopicRange" />
+      <nodes>
+        <classShapeMoniker Id="fc302ef4-c8d6-4751-a9bf-b33405b6b36c" />
+        <classShapeMoniker Id="1d27de39-ac37-456d-b61f-3dc9069da3a2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 10.4368490375601); (19.6875 : 9.9993490375601); (19.6875 : 6.94597245898438); (19.7291666666667 : 6.94597245898437 : JumpStart); (19.8958333333333 : 6.94597245898438 : JumpEnd); (20 : 6.94597245898438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/TopicKeyword/TopicKeyword_TaskKeyword" />
+      <nodes>
+        <classShapeMoniker Id="b9dc7ebc-e4b4-412a-a15b-7871d24cc0a6" />
+        <classShapeMoniker Id="3f2f5478-1d9d-4146-aee1-cc16a400beed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 11.0681469726562); (17.25 : 11.0681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/LOTopic/LOTopic_TopicKeyword" />
+      <nodes>
+        <classShapeMoniker Id="fc302ef4-c8d6-4751-a9bf-b33405b6b36c" />
+        <classShapeMoniker Id="b9dc7ebc-e4b4-412a-a15b-7871d24cc0a6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 16.0681469726563); (14.0416666666667 : 16.0681469726563 : JumpStart); (14.2083333333333 : 16.0681469726563 : JumpEnd); (15.5 : 16.0681469726563); (15.5 : 11.8958968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/TopicTestingMethod/TopicTestingMethod_LOTopic" />
+      <nodes>
+        <classShapeMoniker Id="5c02152e-aaf7-49ea-b450-ebd0075a407b" />
+        <classShapeMoniker Id="fc302ef4-c8d6-4751-a9bf-b33405b6b36c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 9.76666486663662); (13.9375 : 9.95416486663662); (13.9375 : 9.5625); (14.0660744349011 : 9.69107443490112 : JumpStart); (14.1839255650989 : 9.80892556509888 : JumpEnd); (14.2535744349011 : 9.87857443490112 : JumpStart); (14.3714255650989 : 9.99642556509888 : JumpEnd); (14.5 : 10.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/UnitLearningOutcome/UnitLearningOutcome_LOTopic" />
+      <nodes>
+        <classShapeMoniker Id="089ba50b-e6c9-4a1e-9678-b4105bb3255c" />
+        <classShapeMoniker Id="fc302ef4-c8d6-4751-a9bf-b33405b6b36c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 9.03929768880208); (11.75 : 9.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/QualUnit/QualUnit_UnitLearningOutcome" />
+      <nodes>
+        <classShapeMoniker Id="a43b93ec-fee4-4187-b0be-d044a708192d" />
+        <classShapeMoniker Id="089ba50b-e6c9-4a1e-9678-b4105bb3255c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16 : 5.65549967447917); (16 : 6.10900008723958); (17.25 : 6.10900008723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/Assessment/Assessment_UnitsAssessed" />
+      <nodes>
+        <classShapeMoniker Id="975b07fd-b54f-4cf6-a621-88b984f77df7" />
+        <classShapeMoniker Id="f0dbb503-5ff9-446e-b837-14eeadf3a31b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 7.125); (16.875 : 6.75); (16.875 : 7.2612939453125); (17.25 : 6.8862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AWriteLTSCDataContext/CourseUnit/CourseUnit_UnitsAssessed" />
+      <nodes>
+        <classShapeMoniker Id="e255ba1d-b1dc-44da-b2ba-75ebbb9a7895" />
+        <classShapeMoniker Id="f0dbb503-5ff9-446e-b837-14eeadf3a31b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

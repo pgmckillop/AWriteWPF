@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWrite", "AWrite\AWrite.csproj", "{6BEFDA62-E4D1-4DC6-A65D-B716BD4CB105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWriteDB", "AWriteDB\AWriteDB.csproj", "{608C4D5D-4E00-4555-AE75-9640BDE2E21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWEF", "AWEF\AWEF.csproj", "{4A227750-1BCC-4822-AF3B-B0BA145E4EAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BEFDA62-E4D1-4DC6-A65D-B716BD4CB105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BEFDA62-E4D1-4DC6-A65D-B716BD4CB105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BEFDA62-E4D1-4DC6-A65D-B716BD4CB105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BEFDA62-E4D1-4DC6-A65D-B716BD4CB105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{608C4D5D-4E00-4555-AE75-9640BDE2E21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{608C4D5D-4E00-4555-AE75-9640BDE2E21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{608C4D5D-4E00-4555-AE75-9640BDE2E21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{608C4D5D-4E00-4555-AE75-9640BDE2E21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A227750-1BCC-4822-AF3B-B0BA145E4EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A227750-1BCC-4822-AF3B-B0BA145E4EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A227750-1BCC-4822-AF3B-B0BA145E4EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A227750-1BCC-4822-AF3B-B0BA145E4EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
