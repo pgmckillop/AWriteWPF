@@ -26,3 +26,15 @@ H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWriteDB\bin\Debug\EntityFramework.
 H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWriteDB\bin\Debug\EntityFramework.SqlServer.xml
 H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWriteDB\bin\Debug\AWEF.dll
 H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWriteDB\bin\Debug\AWEF.pdb
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\AWriteDB.dll.config
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\AWriteDB.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\AWriteDB.pdb
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\AWEF.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\EntityFramework.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\AWEF.pdb
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\EntityFramework.xml
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\obj\Debug\AWriteDB.csprojResolveAssemblyReference.cache
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\obj\Debug\AWriteDB.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWriteDB\obj\Debug\AWriteDB.pdb

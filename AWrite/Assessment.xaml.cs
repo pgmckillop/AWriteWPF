@@ -87,24 +87,24 @@ namespace AWrite
         private void btnRemoveUnit_Click(object sender, RoutedEventArgs e)
         {
             int unitID = 0;
-            var item = lbCourseUnits.SelectedItem;
-            Type itemType = item.GetType();
-            System.Reflection.PropertyInfo propInfo = null;
-            propInfo = itemType.GetProperty("CourseUnitTitle");
-            int courseID = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
-            string unitTitleValue = propInfo.GetValue(item, null) as string;
+            int countSelected = lbCourseUnits.SelectedItems.Count;
+            int[] selectedIds = new int[countSelected];
 
-            unitID = AWriteDB.DBCourseUnit.GetUnitID(courseID, unitTitleValue);
-            if (unitID != -2)
+            foreach (var item in lbCourseUnits.SelectedItems)
             {
-                MessageBox.Show("Selected unit ID is: " + unitID);
-            }
-            else
-            {
-                MessageBox.Show("Phuckt");
-            }
+                int i = 0;
+                Type itemType = item.GetType();
+                System.Reflection.PropertyInfo propInfo = null;
+                propInfo = itemType.GetProperty("CourseUnitTitle");
+                int courseID = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
+                string unitTitleValue = propInfo.GetValue(item, null) as string;
 
-
+                unitID = AWriteDB.DBCourseUnit.GetUnitID(courseID, unitTitleValue);
+                // works up to here. Cannot add items after 0 to array
+                selectedIds[i] = unitID;
+                i++;              
+            }
+           
         }
 
         private void lbCourseUnits_SelectionChanged(object sender, SelectionChangedEventArgs e)

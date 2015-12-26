@@ -8,3 +8,13 @@ H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWEF\bin\Debug\EntityFramework.SqlS
 H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWEF\obj\Debug\AWEF.csprojResolveAssemblyReference.cache
 H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWEF\obj\Debug\AWEF.dll
 H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWEF\obj\Debug\AWEF.pdb
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\AWEF.dll.config
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\AWEF.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\AWEF.pdb
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\EntityFramework.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\EntityFramework.xml
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\obj\Debug\AWEF.csprojResolveAssemblyReference.cache
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\obj\Debug\AWEF.dll
+C:\Users\Paul\Desktop\Github\AWrite\AWEF\obj\Debug\AWEF.pdb
