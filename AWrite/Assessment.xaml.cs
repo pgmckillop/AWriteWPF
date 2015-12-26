@@ -90,9 +90,24 @@ namespace AWrite
             int countSelected = lbCourseUnits.SelectedItems.Count;
             int[] selectedIds = new int[countSelected];
 
-            foreach (var item in lbCourseUnits.SelectedItems)
+            //foreach (var item in lbCourseUnits.SelectedItems)
+            //{
+            //    int i = 0;
+            //    Type itemType = item.GetType();
+            //    System.Reflection.PropertyInfo propInfo = null;
+            //    propInfo = itemType.GetProperty("CourseUnitTitle");
+            //    int courseID = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
+            //    string unitTitleValue = propInfo.GetValue(item, null) as string;
+
+            //    unitID = AWriteDB.DBCourseUnit.GetUnitID(courseID, unitTitleValue);
+            //    // works up to here. Cannot add items after 0 to array
+            //    selectedIds[i] = unitID;
+            //    i++;              
+            //}
+
+            for (int counter = countSelected -1; counter >= 0; --counter)
             {
-                int i = 0;
+                var item = lbCourseUnits.SelectedItems[counter];
                 Type itemType = item.GetType();
                 System.Reflection.PropertyInfo propInfo = null;
                 propInfo = itemType.GetProperty("CourseUnitTitle");
@@ -101,8 +116,8 @@ namespace AWrite
 
                 unitID = AWriteDB.DBCourseUnit.GetUnitID(courseID, unitTitleValue);
                 // works up to here. Cannot add items after 0 to array
-                selectedIds[i] = unitID;
-                i++;              
+                // debug looping seems to add right things to array
+                selectedIds[counter] = unitID;
             }
            
         }
