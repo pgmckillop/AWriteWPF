@@ -105,7 +105,7 @@ namespace AWrite
             //    i++;              
             //}
 
-            for (int counter = countSelected -1; counter >= 0; --counter)
+            for (int counter = countSelected -1; counter >= 0; counter--)
             {
                 var item = lbCourseUnits.SelectedItems[counter];
                 Type itemType = item.GetType();
@@ -117,9 +117,13 @@ namespace AWrite
                 unitID = AWriteDB.DBCourseUnit.GetUnitID(courseID, unitTitleValue);
                 // works up to here. Cannot add items after 0 to array
                 // debug looping seems to add right things to array
+
+                // DEBUG UPDATE changed counter decrement to post decrement
+                // now getting the ID all selecte units
                 selectedIds[counter] = unitID;
             }
-           
+            for (int i = 0; i <= countSelected - 1; i++)
+                MessageBox.Show(selectedIds[i].ToString());
         }
 
         private void lbCourseUnits_SelectionChanged(object sender, SelectionChangedEventArgs e)
