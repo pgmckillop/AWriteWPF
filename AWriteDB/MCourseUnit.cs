@@ -49,6 +49,8 @@ namespace AWriteDB
 
         }
 
+        // This ia the constructor that can be used for 
+        // data transfer between Assessment and AssessmentTasks pages
         public MCourseUnit(int unitID, string unitTitle)
         {
             idCourseUnit = unitID;

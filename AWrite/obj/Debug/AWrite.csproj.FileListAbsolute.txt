@@ -159,3 +159,6 @@ C:\Users\Paul\Desktop\Github\AWrite\AWrite\obj\Debug\TreeTry.baml
 C:\Users\Paul\Desktop\Github\AWrite\AWrite\obj\Debug\AWrite.g.resources
 C:\Users\Paul\Desktop\Github\AWrite\AWrite\obj\Debug\AWrite.Properties.Resources.resources
 C:\Users\Paul\Desktop\Github\AWrite\AWrite\obj\Debug\AWrite.csproj.GenerateResource.Cache
+C:\Users\Paul\Desktop\Github\AWriteWPF\AWrite\bin\Debug\AWrite.exe.config
+C:\Users\Paul\Desktop\Github\AWriteWPF\AWrite\obj\Debug\AWrite.exe
+C:\Users\Paul\Desktop\Github\AWriteWPF\AWrite\obj\Debug\AWrite.pdb
