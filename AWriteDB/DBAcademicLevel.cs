@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class DBAcademicLevel
+    public class DbAcademicLevel
     {
         public static List<MAcademicLevel> GetAcademicLevels()
         {
             List<MAcademicLevel> myList = new List<MAcademicLevel>();
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             string selectStatement = "SELECT idAcadLevel, AcadLevelName, AcadLevelShort, AcadLevelSort FROM AcademicLevel";
             SqlCommand command = new SqlCommand(selectStatement, connection);
             try

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class DBAssessmentType
+    public class DbAssessmentType
     {
         public static List<MAssessmentType> GetAssessmentTypes()
         {
             List<MAssessmentType> mylist = new List<MAssessmentType>();
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             string selectStatement = "SELECT idAssessmentType, AssessmentTypeName FROM AssessmentType";
             SqlCommand command = new SqlCommand(selectStatement, connection);
 

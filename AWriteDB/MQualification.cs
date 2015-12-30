@@ -8,9 +8,9 @@ namespace AWriteDB
 {
     public class MQualification
     {
-        public int QualificationID { get; set; }
+        public int QualificationId { get; set; }
 
-        public int CurriculumID { get; set; }
+        public int CurriculumId { get; set; }
 
         private string qualificationName;
 

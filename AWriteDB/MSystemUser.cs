@@ -8,9 +8,9 @@ namespace AWriteDB
 {
     public class MSystemUser
     {
-        public int SystemUserID { get; set; }
+        public int SystemUserId { get; set; }
 
-        public int SystemUserTypeID { get; set; }
+        public int SystemUserTypeId { get; set; }
 
         private string systemUserForename;
 
@@ -91,16 +91,16 @@ namespace AWriteDB
         }
 
         // constructor for validate
-        public MSystemUser(int systemUserIDIn, string systemUserLoginIn, string systemUserPasswordIn)
+        public MSystemUser(int systemUserIdIn, string systemUserLoginIn, string systemUserPasswordIn)
         {
-            SystemUserID = systemUserIDIn;
+            SystemUserId = systemUserIdIn;
             systemUserLoginName = systemUserLoginIn;
             systemUserInitialPassword = systemUserPasswordIn;
         }
 
-        public MSystemUser(int systemUserIDIn, string systemUserLoginIn)
+        public MSystemUser(int systemUserIdIn, string systemUserLoginIn)
         {
-            SystemUserID = systemUserIDIn;
+            SystemUserId = systemUserIdIn;
             systemUserLoginName = systemUserLoginIn;
         }
 

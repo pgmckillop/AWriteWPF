@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    class DBQualificationPathway
+    class DbQualificationPathway
     {
     }
 }

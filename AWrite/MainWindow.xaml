@@ -30,15 +30,15 @@
                    Grid.ColumnSpan="2"
                    FontSize="25">Create a new assignment</TextBlock>
         <TextBlock Margin="5" TextAlignment="Left" VerticalAlignment="Top" Grid.Row="1" FontSize="15">Select Academic Level</TextBlock>
-        <ComboBox Margin="5" Name="cboLevels" ItemsSource="{Binding}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" DropDownClosed="cboLevels_DropDownClosed" FontSize="15" />
+        <ComboBox Margin="5" Name="CboLevels" ItemsSource="{Binding}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" DropDownClosed="cboLevels_DropDownClosed" FontSize="15" />
         <TextBlock Margin="5" TextAlignment="Left" VerticalAlignment="Top" Grid.Row="2" FontSize="15"> Select a Curriculum</TextBlock>
-        <ComboBox Margin="5" Name="cboCurricula" ItemsSource="{Binding}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" DropDownClosed="cboCurricula_DropDownClosed" FontSize="15"/>
+        <ComboBox Margin="5" Name="CboCurricula" ItemsSource="{Binding}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" DropDownClosed="cboCurricula_DropDownClosed" FontSize="15"/>
         <TextBlock Margin="5" TextAlignment="Left" VerticalAlignment="Top" Grid.Row="3" FontSize="15">Select a Qualification</TextBlock>
-        <ComboBox Margin="5,5,5,0" Name="cboQualifications" ItemsSource="{Binding}" Grid.Row="3" Grid.Column="1" FontSize="15" DropDownClosed="cboQualifications_DropDownClosed" Height="26" VerticalAlignment="Top"/>
+        <ComboBox Margin="5,5,5,0" Name="CboQualifications" ItemsSource="{Binding}" Grid.Row="3" Grid.Column="1" FontSize="15" DropDownClosed="cboQualifications_DropDownClosed" Height="26" VerticalAlignment="Top"/>
         <TextBlock Margin="5" TextAlignment="Left" VerticalAlignment="Top" Grid.Row="4" FontSize="15">Select a Pathway</TextBlock>
-        <ComboBox Margin="5" Name="cboPathways" ItemsSource="{Binding}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" FontSize="15" DropDownClosed="cboPathways_DropDownClosed"/>
+        <ComboBox Margin="5" Name="CboPathways" ItemsSource="{Binding}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" FontSize="15" DropDownClosed="cboPathways_DropDownClosed"/>
         <TextBlock Margin="5" TextAlignment="Left" VerticalAlignment="Top" Grid.Row="5" FontSize="15">Select a Course</TextBlock>
-        <ComboBox Margin="5" Name="cboCourses" ItemsSource="{Binding}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" FontSize="15" DropDownClosed="cboCourses_DropDownClosed"/>
+        <ComboBox Margin="5" Name="CboCourses" ItemsSource="{Binding}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" FontSize="15" DropDownClosed="cboCourses_DropDownClosed"/>
         <TextBlock Grid.Column="3"
                    FontSize="25"
                    Grid.ColumnSpan="2"
@@ -47,7 +47,7 @@
                    Margin="10"
                    TextAlignment="Center"> My existing assignments</TextBlock>
         <ListView Margin="10"
-                  Name="lvMyAssignments"
+                  Name="LvMyAssignments"
                   Grid.Column="3"
                   Grid.ColumnSpan="2"
                   Grid.Row="1"
@@ -55,7 +55,7 @@
                   Background="Beige" />
         
         
-        <Button Name="btnNewAssignment"
+        <Button Name="BtnNewAssignment"
                 Click="btnNewAssignment_Click"
                 Content="Create New Assignment"
                 Grid.Row="6"
@@ -65,7 +65,7 @@
                 HorizontalAlignment="Stretch"
                 Margin="5,10,5,10"/>
         
-        <Button Name="btnEditAssignment"
+        <Button Name="BtnEditAssignment"
                 Content="Edit selected"
                 Grid.Column="3"
                 Grid.ColumnSpan="2"

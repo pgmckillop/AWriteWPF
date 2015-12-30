@@ -55,7 +55,7 @@
                    Grid.Column="1">
             Enter Username
         </TextBlock>
-        <TextBox Name="txtUsername" 
+        <TextBox Name="TxtUsername" 
                  VerticalAlignment="Top" 
                  Margin="5" 
                  Grid.Row="2"
@@ -69,19 +69,19 @@
                    Grid.Column="1">
             Enter Password
         </TextBlock>
-        <PasswordBox Name="txtPassword" 
+        <PasswordBox Name="TxtPassword" 
                  VerticalAlignment="Top" 
                  Margin="5" 
                  Grid.Row="4"
                  Grid.Column="1"
                  HorizontalAlignment="Stretch"  />
-        <Button Name="btnValidate" Margin="5"
+        <Button Name="BtnValidate" Margin="5"
                 Grid.Row="5"
                 Grid.Column="1"
                 FontWeight="Bold"
                 HorizontalAlignment="Stretch" Click="btnValidate_Click"
                 VerticalAlignment="Stretch" Content="Log in to Application" />
-        <Button Name="btnDragTest"
+        <Button Name="BtnDragTest"
                 Click="btnDragTest_Click"
                 Grid.Column="0"
                 Grid.Row="6"

@@ -8,9 +8,9 @@ namespace AWriteDB
 {
     class MCourse
     {
-        public int CourseID { get; set; }
+        public int CourseId { get; set; }
 
-        public int PathwayID { get; set; }
+        public int PathwayId { get; set; }
 
         private string courseName;
 

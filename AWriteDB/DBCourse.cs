@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class DBCourse
+    public class DbCourse
     {
     }
 }

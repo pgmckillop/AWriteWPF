@@ -14,19 +14,19 @@ namespace AWrite
     {
 
         //ListBox dragSource = null;
-        List<AWriteDB.DBCourseUnit> selectedUnits = new List<AWriteDB.DBCourseUnit>();
+        List<AWriteDB.DbCourseUnit> selectedUnits = new List<AWriteDB.DbCourseUnit>();
         public Assessment()
         {
             InitializeComponent();
             BindAssessmentTypes();
 
             // Bind CourseUnits to list box
-            int courseID = 0;
-            courseID = Convert.ToInt32( App.Current.Properties["workingCourseID"]);
+            int courseId = 0;
+            courseId = Convert.ToInt32( App.Current.Properties["workingCourseID"]);
             // Check Course ID has been set
-            if (courseID > 0)
+            if (courseId > 0)
             {
-                BindCourseUnits(courseID);
+                BindCourseUnits(courseId);
             }
             else
             {
@@ -38,24 +38,24 @@ namespace AWrite
         void BindAssessmentTypes()
         {
             // Really good algorithm for population of control
-            List<AWriteDB.MAssessmentType> bindingList = AWriteDB.DBAssessmentType.GetAssessmentTypes();
+            List<AWriteDB.MAssessmentType> bindingList = AWriteDB.DbAssessmentType.GetAssessmentTypes();
 
-            cboAssessmentType.ItemsSource = bindingList;
-            cboAssessmentType.DisplayMemberPath = "AssessmentTypeName";
-            cboAssessmentType.SelectedValuePath = "idAssessmentType";
+            CboAssessmentType.ItemsSource = bindingList;
+            CboAssessmentType.DisplayMemberPath = "AssessmentTypeName";
+            CboAssessmentType.SelectedValuePath = "idAssessmentType";
         }
 
-        void BindCourseUnits(int myID)
+        void BindCourseUnits(int myId)
         {
 
-            ObservableCollection<AWriteDB.MCourseUnit> bindingList = AWriteDB.DBCourseUnit.GetCourseUnitsByCourseAllInfo(myID);
+            ObservableCollection<AWriteDB.MCourseUnit> bindingList = AWriteDB.DbCourseUnit.GetCourseUnitsByCourseAllInfo(myId);
             var oc = new List<AWriteDB.MCourseUnit>();
             foreach (var item in bindingList)
                 oc.Add(item);
 
-            lbCourseUnits.ItemsSource = oc;
-            lbCourseUnits.DisplayMemberPath = "CourseUnitTitle";
-            lbCourseUnits.SelectedValuePath = "idCourseUnit";
+            LbCourseUnits.ItemsSource = oc;
+            LbCourseUnits.DisplayMemberPath = "CourseUnitTitle";
+            LbCourseUnits.SelectedValuePath = "idCourseUnit";
         } 
         #endregion
 
@@ -68,26 +68,26 @@ namespace AWrite
         {
             var selection = new StringBuilder();
             selection.AppendLine("You selected");
-            foreach (var item in lbCourseUnits.SelectedItems)
+            foreach (var item in LbCourseUnits.SelectedItems)
             {
                 
 
                 Type itemType = item.GetType();
                 System.Reflection.PropertyInfo propInfo = null;
                 propInfo = itemType.GetProperty("CourseUnitTitle");
-                int courseID = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
+                int courseId = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
                 string propertyValue = propInfo.GetValue(item, null) as string;
                 selection.AppendLine(propertyValue);
             }
             MessageBox.Show(selection.ToString());
             //MessageBox.Show();
-            lbUnitsAssessed.Items.Add(selection.ToString());
+            LbUnitsAssessed.Items.Add(selection.ToString());
         }
 
         private void btnRemoveUnit_Click(object sender, RoutedEventArgs e)
         {
-            int unitID = 0;
-            int countSelected = lbCourseUnits.SelectedItems.Count;
+            int unitId = 0;
+            int countSelected = LbCourseUnits.SelectedItems.Count;
             int[] selectedIds = new int[countSelected];
 
             //foreach (var item in lbCourseUnits.SelectedItems)
@@ -107,20 +107,20 @@ namespace AWrite
 
             for (int counter = countSelected -1; counter >= 0; counter--)
             {
-                var item = lbCourseUnits.SelectedItems[counter];
+                var item = LbCourseUnits.SelectedItems[counter];
                 Type itemType = item.GetType();
                 System.Reflection.PropertyInfo propInfo = null;
                 propInfo = itemType.GetProperty("CourseUnitTitle");
-                int courseID = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
+                int courseId = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
                 string unitTitleValue = propInfo.GetValue(item, null) as string;
 
-                unitID = AWriteDB.DBCourseUnit.GetUnitID(courseID, unitTitleValue);
+                unitId = AWriteDB.DbCourseUnit.GetUnitID(courseId, unitTitleValue);
                 // works up to here. Cannot add items after 0 to array
                 // debug looping seems to add right things to array
 
                 // DEBUG UPDATE changed counter decrement to post decrement
                 // now getting the ID all selecte units
-                selectedIds[counter] = unitID;
+                selectedIds[counter] = unitId;
             }
             for (int i = 0; i <= countSelected - 1; i++)
                 MessageBox.Show(selectedIds[i].ToString());

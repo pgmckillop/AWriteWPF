@@ -18,8 +18,8 @@
         <Grid.ColumnDefinitions>
             
         </Grid.ColumnDefinitions>
-        <DataGrid Name="testGrid" Margin="10" Grid.Row="2" AutoGenerateColumns="False" />
-        <Button x:Name="btnFillGrid" Click="btnFillGrid_Click" Content="Button" HorizontalAlignment="Left" Margin="854,45,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75"/>
+        <DataGrid Name="TestGrid" Margin="10" Grid.Row="2" AutoGenerateColumns="False" />
+        <Button x:Name="BtnFillGrid" Click="btnFillGrid_Click" Content="Button" HorizontalAlignment="Left" Margin="854,45,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75"/>
 
 
     </Grid>

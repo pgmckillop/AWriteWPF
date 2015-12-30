@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class DBSystemUser
+    public class DbSystemUser
     {
         #region Validate user
         public int ValidateUser(string myLogin, string myPassword)
         {
 
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetSystemUserByLogin", connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("systemUserLoginName", myLogin);
@@ -34,7 +34,7 @@ namespace AWriteDB
                         if (myUser.SystemUserInitialPassword.ToString() == myPassword)
                         {
                             // password matched
-                            return Convert.ToInt32(myUser.SystemUserID);
+                            return Convert.ToInt32(myUser.SystemUserId);
                         }
                         else
                         {
@@ -66,7 +66,7 @@ namespace AWriteDB
         #region Login exists
         public int LoginExists(string myLogin)
         {
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetSystemUserByLogin", connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("systemUserLoginName", myLogin);
@@ -79,7 +79,7 @@ namespace AWriteDB
                 if (reader.Read())
                 {
                     MSystemUser myUser = new MSystemUser((int)reader["idSystemUser"], (string)reader["SystemUserLoginName"], (string)reader["SystemUserInitialPassword"]);
-                    return myUser.SystemUserID;
+                    return myUser.SystemUserId;
                 }
                 else
                 {

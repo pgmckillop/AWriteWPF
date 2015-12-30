@@ -26,12 +26,12 @@ namespace AWrite
 
         private void btnValidate_Click(object sender, RoutedEventArgs e)
         {
-            string login = txtUsername.Text;
+            string login = TxtUsername.Text;
             string password = "7S6%5ch1";
 
             int validateCheck = 0;
 
-            AWriteDB.DBSystemUser user = new AWriteDB.DBSystemUser();
+            AWriteDB.DbSystemUser user = new AWriteDB.DbSystemUser();
             validateCheck = user.ValidateUser(login,password);
 
             MessageBox.Show("validation outcome = " + validateCheck.ToString());
@@ -39,7 +39,7 @@ namespace AWrite
             // Launch next page
             this.NavigationService.Navigate(new Uri("MainWindow.xaml", UriKind.Relative));
 
-            App.Current.Properties["activeUser"] = txtUsername.Text;
+            App.Current.Properties["activeUser"] = TxtUsername.Text;
 
 
         }

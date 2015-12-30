@@ -86,14 +86,14 @@ namespace AWrite
 
         private void btnFillGrid_Click(object sender, RoutedEventArgs e)
         {
-            List<AWriteDB.MCourseUnit> units = AWriteDB.DBCourseUnit.GetCourseUnits();
-            testGrid.Columns.Clear();
-            testGrid.ItemsSource = units;
+            List<AWriteDB.MCourseUnit> units = AWriteDB.DbCourseUnit.GetCourseUnits();
+            TestGrid.Columns.Clear();
+            TestGrid.ItemsSource = units;
 
             DataGridTextColumn idColumn = new DataGridTextColumn();
             idColumn.Header = "ID";
             idColumn.Binding = new Binding("idCourseUnit");
-            testGrid.Columns.Add(idColumn);
+            TestGrid.Columns.Add(idColumn);
         
         }
     }

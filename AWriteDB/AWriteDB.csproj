@@ -76,6 +76,7 @@
     <Compile Include="MAssessment.cs" />
     <Compile Include="MCourse.cs" />
     <Compile Include="MCourseUnit.cs" />
+    <Compile Include="MLOTopic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MCurriculum.cs" />
     <Compile Include="MQualification.cs" />

@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class DBCourseUnit
+    public class DbCourseUnit
     {
         public static List<MCourseUnit> GetCourseUnits()
         {
             List<MCourseUnit> units = new List<MCourseUnit>();
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetAllCourseUnits", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             try
@@ -35,36 +35,23 @@ namespace AWriteDB
             return units;
         }
 
-        //public static int GetCourseUnitID(int courseID, string courseUnitTitle)
-        //{
-        //SqlConnection connection = AWDB.GetConnection();
-        //SqlCommand command = new SqlCommand("GetCourseUnitID", connection);
-        //command.CommandType = System.Data.CommandType.StoredProcedure;
-        //command.Parameters.AddWithValue("@courseID",courseID);
-        //command.Parameters.AddWithValue("@courseUnitTitle", courseUnitTitle);
-        //}
-
-        public static int GetUnitID(int myCourseID, string myUnitTitle)
+        public static int GetQualUnitId(int myCourseId, string myUnitTitle)
         {
             int unitId = 0;
             string selectStatement = "SELECT * FROM CourseUnit WHERE Course_idCourse = @myCourseID and CourseUnitTitle = @myUnitTitle";
 
-            SqlConnection connection = AWDB.GetConnection();
-            //This statement works in SSMS
-            //SELECT idCourseUnit FROM [dbo].[CourseUnit]
-            //WHERE CourseUnitTitle = '301 Project Management' and Course_idCourse = 1
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-            selectCommand.Parameters.AddWithValue("@myCourseID", myCourseID);
+            selectCommand.Parameters.AddWithValue("@myCourseID", myCourseId);
             selectCommand.Parameters.AddWithValue("@myUnitTitle", myUnitTitle);
             try
             {
                 connection.Open();
-                // Error here
 
                 SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.SingleRow);
                 if (reader.Read())
                 {
-                    unitId = Convert.ToInt32(reader["idCourseUnit"]);
+                    unitId = Convert.ToInt32(reader["idQualUnit"]);
                 }
                 else
                 {
@@ -82,14 +69,14 @@ namespace AWriteDB
         }
 
 
-        public static string GetCourseUnitID(int myCourseID, string myCourseUnitTitle)
+        public static string GetCourseUnitId(int myCourseId, string myCourseUnitTitle)
         {
             int temp = 0;
-            string unitID = string.Empty;
-            SqlConnection connection = AWDB.GetConnection();
+            string unitId = string.Empty;
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetCourseUnitID", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@courseID", myCourseID);
+            command.Parameters.AddWithValue("@courseID", myCourseId);
             command.Parameters.AddWithValue("@courseUnitTitle", myCourseUnitTitle);
             SqlParameter outputParameter = new SqlParameter();
             outputParameter.ParameterName = "@courseUnitID";
@@ -101,25 +88,25 @@ namespace AWriteDB
             {
                 connection.Open();
                 command.ExecuteNonQuery();
-                unitID = outputParameter.Value.ToString();
+                unitId = outputParameter.Value.ToString();
             }
             finally
             {
                 connection.Close();
             }
 
-            return unitID;
+            return unitId;
             
         }
         
         // get limited list of courses by their Course
-        public static List<MCourseUnit> GetCourseUnitsByCourse(int ID)
+        public static List<MCourseUnit> GetCourseUnitsByCourse(int id)
         {
             List<MCourseUnit> units = new List<MCourseUnit>();
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetCourseUnitsByCourse", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idCourse", ID);
+            command.Parameters.AddWithValue("@idCourse", id);
 
             try  
             {
@@ -141,13 +128,13 @@ namespace AWriteDB
             return units;
         }
 
-        public static ObservableCollection<MCourseUnit> GetCourseUnitsByCourseAllInfo(int ID)
+        public static ObservableCollection<MCourseUnit> GetCourseUnitsByCourseAllInfo(int id)
         {
             ObservableCollection<MCourseUnit> units = new ObservableCollection<MCourseUnit>();
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetCourseUnitsByCourseAllInfo", connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idCourse", ID);
+            command.Parameters.AddWithValue("@idCourse", id);
 
             try
             {

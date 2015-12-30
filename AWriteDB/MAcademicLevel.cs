@@ -8,7 +8,7 @@ namespace AWriteDB
 {
     public class MAcademicLevel
     {
-        public int AcademicLevelID { get; set; }
+        public int AcademicLevelId { get; set; }
 
         private string acdemicLevelName;
 
@@ -38,7 +38,7 @@ namespace AWriteDB
         // Constructor
         public MAcademicLevel(int idAcadLevel,string acadLevelName, string acadLevelShort, int acadLevelSort)
         {
-            AcademicLevelID = idAcadLevel;
+            AcademicLevelId = idAcadLevel;
             AcademicLevelName = acadLevelName;
             AcademicLevelShort = acadLevelShort;
             AcademicLevelSort = acadLevelSort;

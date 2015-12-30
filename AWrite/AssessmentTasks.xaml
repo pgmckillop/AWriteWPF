@@ -47,7 +47,7 @@
             Select topics from the list below and drag to tasks where they will be assessed
         </TextBlock>
         
-        <TreeView Name="tvTopics"
+        <TreeView Name="TvTopics"
                   Margin="10,5,10,5"
                   Background="LightBlue"
                   Grid.Row="2"
@@ -115,44 +115,44 @@
             Topics in Task 6
         </TextBlock>
         
-        <ListView Name="lvTask1Topics"
+        <ListView Name="LvTask1Topics"
                   Margin="10,5,10,5"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Grid.Column="2"
                   Grid.Row="2" />
-        <ListView Name="lvTask2Topics"
+        <ListView Name="LvTask2Topics"
                   Margin="10,5,10,5"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Grid.Column="4"
                   Grid.Row="2" />
-        <ListView Name="lvTask3Topics"
+        <ListView Name="LvTask3Topics"
                   Margin="10,5,10,5"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Grid.Column="2"
                   Grid.Row="4" />
-        <ListView Name="lvTask4Topics"
+        <ListView Name="LvTask4Topics"
                   Margin="10,5,10,5"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Grid.Column="4"
                   Grid.Row="4" />
-        <ListView Name="lvTask5Topics"
+        <ListView Name="LvTask5Topics"
                   Margin="10,5,10,5"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Grid.Column="2"
                   Grid.Row="6" />
-        <ListView Name="lvTask6Topics"
+        <ListView Name="LvTask6Topics"
                   Margin="10,5,10,5"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Grid.Column="4"
                   Grid.Row="6" />
         
-        <Button Name="btnToTask1" 
+        <Button Name="BtnToTask1" 
                 Margin="10,5,10,5"
                 Grid.Column="4"
                 Grid.Row="7"

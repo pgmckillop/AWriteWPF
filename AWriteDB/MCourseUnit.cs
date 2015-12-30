@@ -11,7 +11,7 @@ namespace AWriteDB
 
         private int idCourseUnit;
 
-        public int IDCourseUnit
+        public int IdCourseUnit
         {
             get { return idCourseUnit; }
             set { idCourseUnit = value; }
@@ -19,11 +19,11 @@ namespace AWriteDB
 
         //public int CourseUnitID { get; set; }
 
-        public int UnitStatusID { get; set; }
+        public int UnitStatusId { get; set; }
 
-        public int CourseID { get; set; }
+        public int CourseId { get; set; }
 
-        public int QualUnitID { get; set; }
+        public int QualUnitId { get; set; }
 
         private string courseUnitTitle;
         private object selectedItem;
@@ -35,12 +35,12 @@ namespace AWriteDB
         }
 
 
-        public MCourseUnit(int unitID, int statusID, int courseID, int qualID, string unitTitle)
+        public MCourseUnit(int unitId, int statusId, int courseId, int qualId, string unitTitle)
         {
-            idCourseUnit = unitID;
-            UnitStatusID = statusID;
-            CourseID = courseID;
-            QualUnitID = qualID;
+            idCourseUnit = unitId;
+            UnitStatusId = statusId;
+            CourseId = courseId;
+            QualUnitId = qualId;
             courseUnitTitle = unitTitle;
         }
 
@@ -51,9 +51,9 @@ namespace AWriteDB
 
         // This ia the constructor that can be used for 
         // data transfer between Assessment and AssessmentTasks pages
-        public MCourseUnit(int unitID, string unitTitle)
+        public MCourseUnit(int unitId, string unitTitle)
         {
-            idCourseUnit = unitID;
+            idCourseUnit = unitId;
             courseUnitTitle = unitTitle;
         }
 
