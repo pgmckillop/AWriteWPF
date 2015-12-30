@@ -4,6 +4,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.ObjectModel;
+using System.Data.Common.CommandTrees;
+using System.Linq;
+using AWriteDB;
 
 namespace AWrite
 {
@@ -114,15 +117,18 @@ namespace AWrite
                 int courseId = Convert.ToInt32(App.Current.Properties["workingCourseID"]);
                 string unitTitleValue = propInfo.GetValue(item, null) as string;
 
-                unitId = AWriteDB.DbCourseUnit.GetUnitID(courseId, unitTitleValue);
+                unitId = AWriteDB.DbCourseUnit.GetQualUnitId(courseId, unitTitleValue);
                 // works up to here. Cannot add items after 0 to array
                 // debug looping seems to add right things to array
 
                 // DEBUG UPDATE changed counter decrement to post decrement
                 // now getting the ID all selecte units
                 selectedIds[counter] = unitId;
+
+                List<MQualUnit> unitRange = DbQualUnit.UnitRange(selectedIds).ToList();
+                //if (unitRange == null) throw new ArgumentNullException(nameof(unitRange));
             }
-            for (int i = 0; i <= countSelected - 1; i++)
+            for (var i = 0; i <= countSelected - 1; i++)
                 MessageBox.Show(selectedIds[i].ToString());
         }
 

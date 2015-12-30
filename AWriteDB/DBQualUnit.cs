@@ -7,7 +7,7 @@ using AWEF;
 
 namespace AWriteDB
 {
-    class DbQualUnit
+    public class DbQualUnit
     {
         public static List<MQualUnit> UnitRange(int[] myUnits)
         {
@@ -18,4 +18,7 @@ namespace AWriteDB
             return result;
         } 
     }
+
+
+
 }

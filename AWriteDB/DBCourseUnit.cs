@@ -51,7 +51,7 @@ namespace AWriteDB
                 SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.SingleRow);
                 if (reader.Read())
                 {
-                    unitId = Convert.ToInt32(reader["idQualUnit"]);
+                    unitId = Convert.ToInt32(reader["QualUnit_idQualUnit"]);
                 }
                 else
                 {
