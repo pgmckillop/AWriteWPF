@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'H:\00 DevActive\00 Current\AWrite WPF\AWrite\AWEF\AWEFModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Paul\Desktop\Github\AWrite\AWEF\AWEFModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

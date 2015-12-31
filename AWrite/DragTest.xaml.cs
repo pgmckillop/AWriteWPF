@@ -30,7 +30,7 @@ namespace AWrite
 
 
         private AWriteDB.LTSC.CourseUnit awriteDataContext = new AWriteDB.LTSC.CourseUnit();
-        private DataGridTextColumn textColumn = null;
+        //private DataGridTextColumn textColumn = null;
         private string dataGridDataSource = string.Empty;
 
         private void lbSource_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

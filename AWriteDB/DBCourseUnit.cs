@@ -71,7 +71,7 @@ namespace AWriteDB
 
         public static string GetCourseUnitId(int myCourseId, string myCourseUnitTitle)
         {
-            int temp = 0;
+            //int temp = 0;
             string unitId = string.Empty;
             SqlConnection connection = Awdb.GetConnection();
             SqlCommand command = new SqlCommand("GetCourseUnitID", connection);

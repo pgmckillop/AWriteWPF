@@ -98,6 +98,13 @@
     <Property Name="AcademiclLevel_idAcadLevel" Type="int" Nullable="false" />
     <Property Name="CurriculumName" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="LookupID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LookupId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="LOTopic">
     <Key>
       <PropertyRef Name="idLOTopic" />
@@ -604,6 +611,7 @@
     <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CourseUnit" EntityType="Self.CourseUnit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Curriculum" EntityType="Self.Curriculum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LookupID" EntityType="Self.LookupID" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOTopic" EntityType="Self.LOTopic" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QualificationPathway" EntityType="Self.QualificationPathway" Schema="dbo" store:Type="Tables" />

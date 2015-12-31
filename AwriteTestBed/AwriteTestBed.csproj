@@ -126,6 +126,9 @@
     <Compile Include="GetSystemUserByLogin_Result.cs">
       <DependentUpon>ConsoleModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LookupID.cs">
+      <DependentUpon>ConsoleModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="LOTopic.cs">
       <DependentUpon>ConsoleModel.tt</DependentUpon>
     </Compile>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="awriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="awriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AcademicLevel">
           <Key>
             <PropertyRef Name="idAcadLevel" />
@@ -102,6 +102,13 @@
           <Property Name="idCurriculum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AcademiclLevel_idAcadLevel" Type="int" Nullable="false" />
           <Property Name="CurriculumName" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LookupID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LookupId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LOTopic">
           <Key>
@@ -609,6 +616,7 @@
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseUnit" EntityType="Self.CourseUnit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Curriculum" EntityType="Self.Curriculum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LookupID" EntityType="Self.LookupID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOTopic" EntityType="Self.LOTopic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QualificationPathway" EntityType="Self.QualificationPathway" Schema="dbo" store:Type="Tables" />
@@ -736,8 +744,7 @@
             <End Role="TaskTopicRange" EntitySet="TaskTopicRange" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="awriteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1498,11 +1505,11 @@
             <End Role="TaskKeyword" EntitySet="TaskKeywords" />
           </AssociationSet>
           <FunctionImport Name="GetAcadLevelByID" ReturnType="Collection(awriteModel.GetAcadLevelByID_Result)">
-            <Parameter Name="LevelID" Mode="In" Type="Int32" />
+          <Parameter Name="LevelID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAllCourseUnits" ReturnType="Collection(awriteModel.GetAllCourseUnits_Result)" />
           <FunctionImport Name="GetCoursesByPathway" ReturnType="Collection(awriteModel.GetCoursesByPathway_Result)">
-            <Parameter Name="idPathway" Mode="In" Type="Int32" />
+          <Parameter Name="idPathway" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCourseUnitID" ReturnType="Collection(Int32)">
             <Parameter Name="courseID" Mode="In" Type="Int32" />
@@ -1510,23 +1517,24 @@
             <Parameter Name="courseUnitID" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCourseUnitsByCourse" ReturnType="Collection(awriteModel.GetCourseUnitsByCourse_Result)">
-            <Parameter Name="idCourse" Mode="In" Type="Int32" />
+          <Parameter Name="idCourse" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCourseUnitsByCourseAllInfo" ReturnType="Collection(awriteModel.GetCourseUnitsByCourseAllInfo_Result)">
-            <Parameter Name="idCourse" Mode="In" Type="Int32" />
+          <Parameter Name="idCourse" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCurriculumByLevel" ReturnType="Collection(awriteModel.GetCurriculumByLevel_Result)">
-            <Parameter Name="idAcadLevel" Mode="In" Type="Int32" />
+          <Parameter Name="idAcadLevel" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetPathwaysByQualification" ReturnType="Collection(awriteModel.GetPathwaysByQualification_Result)">
-            <Parameter Name="idQualification" Mode="In" Type="Int32" />
+          <Parameter Name="idQualification" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetQualificationByCurriculum" ReturnType="Collection(awriteModel.GetQualificationByCurriculum_Result)">
-            <Parameter Name="idCurriculum" Mode="In" Type="Int32" />
+          <Parameter Name="idCurriculum" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetSystemUserByLogin" ReturnType="Collection(awriteModel.GetSystemUserByLogin_Result)">
-            <Parameter Name="systemUserLoginName" Mode="In" Type="String" />
+          <Parameter Name="systemUserLoginName" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="LookupIDs" EntityType="awriteModel.LookupID" />
         </EntityContainer>
         <ComplexType Name="GetAcadLevelByID_Result">
           <Property Type="Int32" Name="idAcadLevel" Nullable="false" />
@@ -1584,6 +1592,13 @@
           <Property Type="String" Name="SystemUserLandline" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="SystemUserMobile" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <EntityType Name="LookupID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LookupId1" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1934,6 +1949,14 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="LookupIDs">
+            <EntityTypeMapping TypeName="awriteModel.LookupID">
+              <MappingFragment StoreEntitySet="LookupID">
+                <ScalarProperty Name="LookupId1" ColumnName="LookupId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

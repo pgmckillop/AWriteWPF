@@ -51,6 +51,7 @@ namespace AwriteTestBed
         public virtual DbSet<UnitLearningOutcome> UnitLearningOutcomes { get; set; }
         public virtual DbSet<UnitsAssessed> UnitsAssesseds { get; set; }
         public virtual DbSet<UnitStatu> UnitStatus { get; set; }
+        public virtual DbSet<LookupID> LookupIDs { get; set; }
     
         public virtual ObjectResult<GetAcadLevelByID_Result> GetAcadLevelByID(Nullable<int> levelID)
         {

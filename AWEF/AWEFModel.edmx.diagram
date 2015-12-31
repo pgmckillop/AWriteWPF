@@ -57,6 +57,7 @@
         <AssociationConnector Association="awriteModel.FK__UnitLearn__QualU__403A8C7D" ManuallyRouted="false" />
         <AssociationConnector Association="awriteModel.FK__SystemUse__Syste__71D1E811" ManuallyRouted="false" />
         <AssociationConnector Association="awriteModel.FK__TaskKeywo__Topic__59FA5E80" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="awriteModel.LookupID" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

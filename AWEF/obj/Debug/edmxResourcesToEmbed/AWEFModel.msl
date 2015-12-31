@@ -345,5 +345,13 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="LookupIDs">
+      <EntityTypeMapping TypeName="awriteModel.LookupID">
+        <MappingFragment StoreEntitySet="LookupID">
+          <ScalarProperty Name="LookupId1" ColumnName="LookupId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -123,6 +123,9 @@
     <Compile Include="GetSystemUserByLogin_Result.cs">
       <DependentUpon>AWEFModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LookupID.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="LOTopic.cs">
       <DependentUpon>AWEFModel.tt</DependentUpon>
     </Compile>

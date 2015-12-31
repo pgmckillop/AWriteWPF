@@ -786,6 +786,7 @@
     <FunctionImport Name="GetSystemUserByLogin" ReturnType="Collection(awriteModel.GetSystemUserByLogin_Result)">
       <Parameter Name="systemUserLoginName" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="LookupIDs" EntityType="awriteModel.LookupID" />
   </EntityContainer>
   <ComplexType Name="GetAcadLevelByID_Result">
     <Property Type="Int32" Name="idAcadLevel" Nullable="false" />
@@ -843,4 +844,11 @@
     <Property Type="String" Name="SystemUserLandline" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="SystemUserMobile" Nullable="true" MaxLength="20" />
   </ComplexType>
+  <EntityType Name="LookupID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LookupId1" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>
