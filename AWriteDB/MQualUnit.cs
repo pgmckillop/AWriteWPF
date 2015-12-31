@@ -8,6 +8,7 @@ namespace AWriteDB
 {
     public class MQualUnit
     {
+        public int I { get; set; }
         public int QualUnitId { get; set; }
 
         public int QualificationId { get; set; }
@@ -38,6 +39,16 @@ namespace AWriteDB
         }
 
         private int qualUnitGlh;
+
+        public MQualUnit(int i, int i1, string s, int i2, string s1, int i3)
+        {
+            QualUnitId = i;
+            QualificationId = i1;
+            QualUnitTitle = s;
+            QualUnitNumber = i2;
+            QualUnitUan = s1;
+            QualUnitGlh = i3;
+        }
 
         public int QualUnitGlh
         {

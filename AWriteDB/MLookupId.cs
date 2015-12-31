@@ -16,6 +16,12 @@ namespace AWriteDB
         {
         }
 
+        public MLookupId(int x, int y)
+        {
+            Id = x;
+            LookupId = y;
+        }
+
         // -- Constructor without PK
         public MLookupId(int myValue)
         {

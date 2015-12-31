@@ -62,6 +62,7 @@
     <Compile Include="DBAssessmentType.cs" />
     <Compile Include="DBCourse.cs" />
     <Compile Include="DBCourseUnit.cs" />
+    <Compile Include="DBLookupID.cs" />
     <Compile Include="MAssessmentType.cs" />
     <Compile Include="DBCurriculum.cs" />
     <Compile Include="DBQualification.cs" />
