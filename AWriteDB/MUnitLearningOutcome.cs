@@ -44,6 +44,15 @@ namespace AWriteDB
             return learningOutcomeNumber.ToString() + ": " + loShort;
         }
 
+        public MUnitLearningOutcome(int i, int j, string s, int k, string u)
+        {
+            UnitLearningOutcomeId = i;
+            QualificationUnitId = j;
+            LearningOutcomeName = s;
+            LearningOutcomeNumber = k;
+            LoShort = u;
+        }
+
         public List<LOTopic> Topics { get; set; }
     }
 }

@@ -8,5 +8,14 @@ namespace AWriteDB
 {
     public class DbUnitLearningOutcome
     {
+        public static List<MUnitLearningOutcome> GetAllLearningOutcomes()
+        {
+            List<MUnitLearningOutcome> outcomes = new List<MUnitLearningOutcome>();
+
+
+
+
+            return outcomes;
+        }
     }
 }

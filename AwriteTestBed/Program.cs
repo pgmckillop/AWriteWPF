@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -13,7 +14,7 @@ namespace AwriteTestBed
     {
         static void Main(string[] args)
         {
-            int[] ids = new int[] {4,7,9};
+            int[] ids = new int[] {4,5,6};
             // -- DEBUG test only
             foreach (int i in ids)
                 Console.WriteLine("Array value: " + i);
@@ -34,18 +35,27 @@ namespace AwriteTestBed
             }
 
             // -- now use a join to return the matching QualUnit records
-            // This code returns all the units unflitered
-            //var result = (from u in context.QualUnits
-            //    select u);
             var result = from q in DbQualUnit.GetAllQualUnits()
                 join x in DBLookupID.GetAllLookupIDS()
                     on q.QualUnitId equals x.LookupId
                 select q;
 
-            foreach (AWriteDB.MQualUnit unit in result)
+            using (context)
             {
-                Console.WriteLine(unit.QualUnitNumber + "; " + unit.QualUnitTitle);
+                foreach (var topic in context.LOTopics.Include(x => x.UnitLearningOutcome.QualUnit))
+                    Console.WriteLine("{0} - {1} - {2}", topic.UnitLearningOutcome.QualUnit.QualUnitTitle,
+                        topic.UnitLearningOutcome.LearningOutsomeName,
+                        topic.TopicShort);
             }
+            
+            //foreach (AWriteDB.MQualUnit unit in result)
+            //{
+            //    Console.WriteLine(unit.QualUnitNumber + ":\t" + unit.QualUnitTitle);
+            //    foreach (MUnitLearningOutcome lo in unit.LearningOutcomes)
+            //    {
+            //        Console.WriteLine("\t" + lo.LearningOutcomeName);
+            //    }
+        //}
         }
     }
 }
