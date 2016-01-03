@@ -40,9 +40,14 @@ namespace AwriteTestBed
                     on q.QualUnitId equals x.LookupId
                 select q;
 
+
+            // -- this drill down works, if care taken to select EF
+            // instance of LOTopics to allow Include() to operate through
+            // the graph. 
+            // -- Also watch for graph qualification of levels.
             using (context)
             {
-                foreach (var topic in context.LOTopics.Include(x => x.UnitLearningOutcome.QualUnit))
+                foreach (var topic in context.LOTopics.Include(x => x.UnitLearningOutcome.QualUnit).Where(x => x.TopicTestingMethod.idTopicTestingMethod > 2))
                     Console.WriteLine("{0} - {1} - {2}", topic.UnitLearningOutcome.QualUnit.QualUnitTitle,
                         topic.UnitLearningOutcome.LearningOutsomeName,
                         topic.TopicShort);
