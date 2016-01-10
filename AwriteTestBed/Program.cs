@@ -49,7 +49,7 @@ namespace AwriteTestBed
             {
                 foreach (var topic in context.LOTopics.Include(x => x.UnitLearningOutcome.QualUnit).Where(x => x.TopicTestingMethod.idTopicTestingMethod > 2))
                     Console.WriteLine("{0} - {1} - {2}", topic.UnitLearningOutcome.QualUnit.QualUnitTitle,
-                        topic.UnitLearningOutcome.LearningOutsomeName,
+                        topic.UnitLearningOutcome.LOShort,
                         topic.TopicShort);
             }
             
