@@ -20,22 +20,22 @@ namespace AWrite
         #region Academic Levels Combo Populate
         public void BindAcademicLevels()
         {
-            SqlConnection connection = AWriteDB.AWDB.GetConnection();
+            SqlConnection connection = AWriteDB.Awdb.GetConnection();
             string selectStatement = "SELECT idAcadLevel, AcadLevelName, AcadLevelShort, AcadLevelSort FROM AcademicLevel";
             SqlDataAdapter da = new SqlDataAdapter(selectStatement, connection);
             DataSet ds = new DataSet();
             da.Fill(ds, "AcademicLevel");
 
-            cboLevels.ItemsSource = ds.Tables[0].DefaultView;
-            cboLevels.DisplayMemberPath = ds.Tables[0].Columns["AcadLevelName"].ToString();
-            cboLevels.SelectedValuePath = ds.Tables[0].Columns["idAcadLevel"].ToString(); // note this is a string
+            CboLevels.ItemsSource = ds.Tables[0].DefaultView;
+            CboLevels.DisplayMemberPath = ds.Tables[0].Columns["AcadLevelName"].ToString();
+            CboLevels.SelectedValuePath = ds.Tables[0].Columns["idAcadLevel"].ToString(); // note this is a string
         }
         #endregion
 
         #region cboLevels dropdown close
         private void cboLevels_DropDownClosed(object sender, System.EventArgs e)
         {
-            if ((int)cboLevels.SelectedValue > 0)
+            if ((int)CboLevels.SelectedValue > 0)
             {
 
                 // debug globals
@@ -43,17 +43,17 @@ namespace AWrite
                 //MessageBox.Show(activeUser);
 
                 // clear child combos
-                cboCurricula.ItemsSource = null;
-                cboCurricula.Items.Clear();
+                CboCurricula.ItemsSource = null;
+                CboCurricula.Items.Clear();
 
-                cboQualifications.ItemsSource = null;
-                cboQualifications.Items.Clear();
+                CboQualifications.ItemsSource = null;
+                CboQualifications.Items.Clear();
 
-                cboPathways.ItemsSource = null;
-                cboPathways.Items.Clear();
+                CboPathways.ItemsSource = null;
+                CboPathways.Items.Clear();
 
-                cboCourses.ItemsSource = null;
-                cboCourses.Items.Clear();
+                CboCourses.ItemsSource = null;
+                CboCourses.Items.Clear();
 
 
 
@@ -61,20 +61,20 @@ namespace AWrite
                 SqlCommand command = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
-                SqlConnection connection = AWriteDB.AWDB.GetConnection();
+                SqlConnection connection = AWriteDB.Awdb.GetConnection();
                 try
                 {
                     connection.Open();
                     command = new SqlCommand("GetCurriculumByLevel", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idAcadLevel", (int)cboLevels.SelectedValue);
+                    command.Parameters.AddWithValue("@idAcadLevel", (int)CboLevels.SelectedValue);
                     da.SelectCommand = command;
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Curricula");
 
-                    cboCurricula.ItemsSource = ds.Tables[0].DefaultView;
-                    cboCurricula.DisplayMemberPath = ds.Tables[0].Columns["CurriculumName"].ToString();
-                    cboCurricula.SelectedValuePath = ds.Tables[0].Columns["idCurriculum"].ToString();
+                    CboCurricula.ItemsSource = ds.Tables[0].DefaultView;
+                    CboCurricula.DisplayMemberPath = ds.Tables[0].Columns["CurriculumName"].ToString();
+                    CboCurricula.SelectedValuePath = ds.Tables[0].Columns["idCurriculum"].ToString();
                 }
                 finally
                 {
@@ -90,37 +90,37 @@ namespace AWrite
         private void cboCurricula_DropDownClosed(object sender, System.EventArgs e)
         {
 
-            if ((int)cboCurricula.SelectedValue > 0)
+            if ((int)CboCurricula.SelectedValue > 0)
             {
 
                 // clear child combos
-                cboQualifications.ItemsSource = null;
-                cboQualifications.Items.Clear();
+                CboQualifications.ItemsSource = null;
+                CboQualifications.Items.Clear();
 
-                cboPathways.ItemsSource = null;
-                cboPathways.Items.Clear();
+                CboPathways.ItemsSource = null;
+                CboPathways.Items.Clear();
 
-                cboCourses.ItemsSource = null;
-                cboCourses.Items.Clear();
+                CboCourses.ItemsSource = null;
+                CboCourses.Items.Clear();
 
                 // populate the qualifications combo
                 SqlCommand command = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
-                SqlConnection connection = AWriteDB.AWDB.GetConnection();
+                SqlConnection connection = AWriteDB.Awdb.GetConnection();
                 try
                 {
                     connection.Open();
                     command = new SqlCommand("GetQualificationByCurriculum", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idCurriculum", (int)cboCurricula.SelectedValue);
+                    command.Parameters.AddWithValue("@idCurriculum", (int)CboCurricula.SelectedValue);
                     da.SelectCommand = command;
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Qualifications");
 
-                    cboQualifications.ItemsSource = ds.Tables[0].DefaultView;
-                    cboQualifications.DisplayMemberPath = ds.Tables[0].Columns["QualificationName"].ToString();
-                    cboQualifications.SelectedValuePath = ds.Tables[0].Columns["idQualification"].ToString();
+                    CboQualifications.ItemsSource = ds.Tables[0].DefaultView;
+                    CboQualifications.DisplayMemberPath = ds.Tables[0].Columns["QualificationName"].ToString();
+                    CboQualifications.SelectedValuePath = ds.Tables[0].Columns["idQualification"].ToString();
                 }
                 finally
                 {
@@ -139,33 +139,33 @@ namespace AWrite
         #region cboQualifications dropdown close
         private void cboQualifications_DropDownClosed(object sender, System.EventArgs e)
         {
-            if ((int)cboQualifications.SelectedValue > 0)
+            if ((int)CboQualifications.SelectedValue > 0)
             {
                 // clear child combos
-                cboPathways.ItemsSource = null;
-                cboPathways.Items.Clear();
+                CboPathways.ItemsSource = null;
+                CboPathways.Items.Clear();
 
-                cboCourses.ItemsSource = null;
-                cboCourses.Items.Clear();
+                CboCourses.ItemsSource = null;
+                CboCourses.Items.Clear();
 
                 // populate the pathways combo
                 SqlCommand command = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
-                SqlConnection connection = AWriteDB.AWDB.GetConnection();
+                SqlConnection connection = AWriteDB.Awdb.GetConnection();
                 try
                 {
                     connection.Open();
                     command = new SqlCommand("GetPathwaysByQualification", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idQualification", (int)cboQualifications.SelectedValue);
+                    command.Parameters.AddWithValue("@idQualification", (int)CboQualifications.SelectedValue);
                     da.SelectCommand = command;
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Pathways");
 
-                    cboPathways.ItemsSource = ds.Tables[0].DefaultView;
-                    cboPathways.DisplayMemberPath = ds.Tables[0].Columns["QualPathwayName"].ToString();
-                    cboPathways.SelectedValuePath = ds.Tables[0].Columns["idQualificationPathway"].ToString();
+                    CboPathways.ItemsSource = ds.Tables[0].DefaultView;
+                    CboPathways.DisplayMemberPath = ds.Tables[0].Columns["QualPathwayName"].ToString();
+                    CboPathways.SelectedValuePath = ds.Tables[0].Columns["idQualificationPathway"].ToString();
                 }
                 finally
                 {
@@ -178,31 +178,31 @@ namespace AWrite
         #region cboPathways dropdown close
         private void cboPathways_DropDownClosed(object sender, System.EventArgs e)
         {
-            if ((int)cboPathways.SelectedValue > 0)
+            if ((int)CboPathways.SelectedValue > 0)
             {
                 // clear child combo
-                cboCourses.ItemsSource = null;
-                cboCourses.Items.Clear();
+                CboCourses.ItemsSource = null;
+                CboCourses.Items.Clear();
 
                 // populate the Cour    ses combo
                 SqlCommand command = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
-                SqlConnection connection = AWriteDB.AWDB.GetConnection();
+                SqlConnection connection = AWriteDB.Awdb.GetConnection();
 
                 try
                 {
                     connection.Open();
                     command = new SqlCommand("GetCoursesByPathway", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idPathway", (int)cboPathways.SelectedValue);
+                    command.Parameters.AddWithValue("@idPathway", (int)CboPathways.SelectedValue);
                     da.SelectCommand = command;
                     DataSet ds = new DataSet();
                     da.Fill(ds, "Courses");
 
-                    cboCourses.ItemsSource = ds.Tables[0].DefaultView;
-                    cboCourses.DisplayMemberPath = ds.Tables[0].Columns["CourseName"].ToString();
-                    cboCourses.SelectedValuePath = ds.Tables[0].Columns["idCourse"].ToString();
+                    CboCourses.ItemsSource = ds.Tables[0].DefaultView;
+                    CboCourses.DisplayMemberPath = ds.Tables[0].Columns["CourseName"].ToString();
+                    CboCourses.SelectedValuePath = ds.Tables[0].Columns["idCourse"].ToString();
                 }
                 finally
                 {
@@ -228,7 +228,7 @@ namespace AWrite
         {
             // DEBUG **** Is value stored
             // NOT getting integer
-            App.Current.Properties["workingCourseID"] = cboCourses.SelectedValue;
+            App.Current.Properties["workingCourseID"] = CboCourses.SelectedValue;
         }
     }
 }

@@ -786,6 +786,17 @@
     <FunctionImport Name="GetSystemUserByLogin" ReturnType="Collection(awriteModel.GetSystemUserByLogin_Result)">
       <Parameter Name="systemUserLoginName" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="LookupIDs" EntityType="awriteModel.LookupID" />
+    <FunctionImport Name="GetAllLearningOutcomes" ReturnType="Collection(awriteModel.GetAllLearningOutcomes_Result)" />
+    <FunctionImport Name="GetAllLearningOutcomesByQualUnit" ReturnType="Collection(awriteModel.GetAllLearningOutcomesByQualUnit_Result)">
+      <Parameter Name="QualUnitID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllLookupIDS" ReturnType="Collection(awriteModel.GetAllLookupIDS_Result)" />
+    <FunctionImport Name="GetAllLOTopics" ReturnType="Collection(awriteModel.GetAllLOTopics_Result)" />
+    <FunctionImport Name="GetAllLOTopicsByLOAssessed" ReturnType="Collection(awriteModel.GetAllLOTopicsByLOAssessed_Result)">
+      <Parameter Name="learningOutcome" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllQualUnits" ReturnType="Collection(awriteModel.GetAllQualUnits_Result)" />
   </EntityContainer>
   <ComplexType Name="GetAcadLevelByID_Result">
     <Property Type="Int32" Name="idAcadLevel" Nullable="false" />
@@ -842,5 +853,54 @@
     <Property Type="String" Name="SystemUserEmail" Nullable="false" />
     <Property Type="String" Name="SystemUserLandline" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="SystemUserMobile" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="LookupID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LookupId1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="GetAllLearningOutcomes_Result">
+    <Property Type="Int32" Name="idUnitLearningOutcome" Nullable="false" />
+    <Property Type="Int32" Name="QualUnit_idQualUnit" Nullable="false" />
+    <Property Type="String" Name="LearningOutsomeName" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="LearningOutcomeNumber" Nullable="false" />
+    <Property Type="String" Name="LOShort" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetAllLearningOutcomesByQualUnit_Result">
+    <Property Type="Int32" Name="idUnitLearningOutcome" Nullable="false" />
+    <Property Type="Int32" Name="QualUnit_idQualUnit" Nullable="false" />
+    <Property Type="String" Name="LearningOutsomeName" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="LearningOutcomeNumber" Nullable="false" />
+    <Property Type="String" Name="LOShort" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetAllLookupIDS_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="LookupId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllLOTopics_Result">
+    <Property Type="Int32" Name="idLOTopic" Nullable="false" />
+    <Property Type="Int32" Name="UnitLearningOutcome_idUnitLearningOutcome" Nullable="false" />
+    <Property Type="String" Name="TopicName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="TopicCode" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="TopicTestingMethod_idTopicTestingMethod" Nullable="true" />
+    <Property Type="String" Name="TopicShort" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetAllLOTopicsByLOAssessed_Result">
+    <Property Type="Int32" Name="idLOTopic" Nullable="false" />
+    <Property Type="Int32" Name="UnitLearningOutcome_idUnitLearningOutcome" Nullable="false" />
+    <Property Type="String" Name="TopicName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="TopicCode" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="TopicTestingMethod_idTopicTestingMethod" Nullable="true" />
+    <Property Type="String" Name="TopicShort" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetAllQualUnits_Result">
+    <Property Type="Int32" Name="idQualUnit" Nullable="false" />
+    <Property Type="Int32" Name="Qualification_idQualification" Nullable="false" />
+    <Property Type="String" Name="QualUnitTitle" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="CGUnitNumber" Nullable="false" />
+    <Property Type="String" Name="QualUnitUAN" Nullable="true" MaxLength="45" />
+    <Property Type="Int32" Name="QualUnitGLH" Nullable="true" />
   </ComplexType>
 </Schema>

@@ -98,6 +98,13 @@
     <Property Name="AcademiclLevel_idAcadLevel" Type="int" Nullable="false" />
     <Property Name="CurriculumName" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="LookupID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LookupId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="LOTopic">
     <Key>
       <PropertyRef Name="idLOTopic" />
@@ -567,6 +574,16 @@
     <Parameter Name="LevelID" Type="int" Mode="In" />
   </Function>
   <Function Name="GetAllCourseUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllLearningOutcomes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllLearningOutcomesByQualUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="QualUnitID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllLookupIDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllLOTopics" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllLOTopicsByLOAssessed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="learningOutcome" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllQualUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="GetCoursesByPathway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idPathway" Type="int" Mode="In" />
   </Function>
@@ -604,6 +621,7 @@
     <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CourseUnit" EntityType="Self.CourseUnit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Curriculum" EntityType="Self.Curriculum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LookupID" EntityType="Self.LookupID" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOTopic" EntityType="Self.LOTopic" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QualificationPathway" EntityType="Self.QualificationPathway" Schema="dbo" store:Type="Tables" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    class DBAssessment
+    class DbAssessment
     {
         //CRUD Operations
 
@@ -15,7 +15,7 @@ namespace AWriteDB
         public int CreateNewAssesment(MAssessment assessment)
         {
             MAssessment myAssessment = new MAssessment();
-            SqlConnection connection = AWDB.GetConnection();
+            SqlConnection connection = Awdb.GetConnection();
 
 
             // Successful create return new assessment ID

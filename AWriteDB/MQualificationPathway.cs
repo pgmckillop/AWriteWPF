@@ -8,9 +8,9 @@ namespace AWriteDB
 {
     public class MQualificationPathway
     {
-        public int QualificationPathwayID { get; set; }
+        public int QualificationPathwayId { get; set; }
 
-        public int QualificationID { get; set; }
+        public int QualificationId { get; set; }
 
         private string qualPathwayName;
 

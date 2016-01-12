@@ -51,6 +51,7 @@ namespace AWEF
         public virtual DbSet<UnitLearningOutcome> UnitLearningOutcomes { get; set; }
         public virtual DbSet<UnitsAssessed> UnitsAssesseds { get; set; }
         public virtual DbSet<UnitStatu> UnitStatus { get; set; }
+        public virtual DbSet<LookupID> LookupIDs { get; set; }
     
         public virtual ObjectResult<GetAcadLevelByID_Result> GetAcadLevelByID(Nullable<int> levelID)
         {
@@ -140,6 +141,44 @@ namespace AWEF
                 new ObjectParameter("systemUserLoginName", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSystemUserByLogin_Result>("GetSystemUserByLogin", systemUserLoginNameParameter);
+        }
+    
+        public virtual ObjectResult<GetAllLearningOutcomes_Result> GetAllLearningOutcomes()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllLearningOutcomes_Result>("GetAllLearningOutcomes");
+        }
+    
+        public virtual ObjectResult<GetAllLearningOutcomesByQualUnit_Result> GetAllLearningOutcomesByQualUnit(Nullable<int> qualUnitID)
+        {
+            var qualUnitIDParameter = qualUnitID.HasValue ?
+                new ObjectParameter("QualUnitID", qualUnitID) :
+                new ObjectParameter("QualUnitID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllLearningOutcomesByQualUnit_Result>("GetAllLearningOutcomesByQualUnit", qualUnitIDParameter);
+        }
+    
+        public virtual ObjectResult<GetAllLookupIDS_Result> GetAllLookupIDS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllLookupIDS_Result>("GetAllLookupIDS");
+        }
+    
+        public virtual ObjectResult<GetAllLOTopics_Result> GetAllLOTopics()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllLOTopics_Result>("GetAllLOTopics");
+        }
+    
+        public virtual ObjectResult<GetAllLOTopicsByLOAssessed_Result> GetAllLOTopicsByLOAssessed(Nullable<int> learningOutcome)
+        {
+            var learningOutcomeParameter = learningOutcome.HasValue ?
+                new ObjectParameter("learningOutcome", learningOutcome) :
+                new ObjectParameter("learningOutcome", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllLOTopicsByLOAssessed_Result>("GetAllLOTopicsByLOAssessed", learningOutcomeParameter);
+        }
+    
+        public virtual ObjectResult<GetAllQualUnits_Result> GetAllQualUnits()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllQualUnits_Result>("GetAllQualUnits");
         }
     }
 }

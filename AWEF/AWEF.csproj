@@ -102,6 +102,24 @@
     <Compile Include="GetAllCourseUnits_Result.cs">
       <DependentUpon>AWEFModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetAllLearningOutcomesByQualUnit_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLearningOutcomes_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLookupIDS_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLOTopicsByLOAssessed_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLOTopics_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllQualUnits_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetCoursesByPathway_Result.cs">
       <DependentUpon>AWEFModel.tt</DependentUpon>
     </Compile>
@@ -121,6 +139,9 @@
       <DependentUpon>AWEFModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GetSystemUserByLogin_Result.cs">
+      <DependentUpon>AWEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LookupID.cs">
       <DependentUpon>AWEFModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LOTopic.cs">

@@ -345,5 +345,79 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="LookupIDs">
+      <EntityTypeMapping TypeName="awriteModel.LookupID">
+        <MappingFragment StoreEntitySet="LookupID">
+          <ScalarProperty Name="LookupId1" ColumnName="LookupId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllLearningOutcomes" FunctionName="awriteModel.Store.GetAllLearningOutcomes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllLearningOutcomes_Result">
+          <ScalarProperty Name="idUnitLearningOutcome" ColumnName="idUnitLearningOutcome" />
+          <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+          <ScalarProperty Name="LearningOutsomeName" ColumnName="LearningOutsomeName" />
+          <ScalarProperty Name="LearningOutcomeNumber" ColumnName="LearningOutcomeNumber" />
+          <ScalarProperty Name="LOShort" ColumnName="LOShort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllLearningOutcomesByQualUnit" FunctionName="awriteModel.Store.GetAllLearningOutcomesByQualUnit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllLearningOutcomesByQualUnit_Result">
+          <ScalarProperty Name="idUnitLearningOutcome" ColumnName="idUnitLearningOutcome" />
+          <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+          <ScalarProperty Name="LearningOutsomeName" ColumnName="LearningOutsomeName" />
+          <ScalarProperty Name="LearningOutcomeNumber" ColumnName="LearningOutcomeNumber" />
+          <ScalarProperty Name="LOShort" ColumnName="LOShort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllLookupIDS" FunctionName="awriteModel.Store.GetAllLookupIDS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllLookupIDS_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllLOTopics" FunctionName="awriteModel.Store.GetAllLOTopics">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllLOTopics_Result">
+          <ScalarProperty Name="idLOTopic" ColumnName="idLOTopic" />
+          <ScalarProperty Name="UnitLearningOutcome_idUnitLearningOutcome" ColumnName="UnitLearningOutcome_idUnitLearningOutcome" />
+          <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+          <ScalarProperty Name="TopicCode" ColumnName="TopicCode" />
+          <ScalarProperty Name="TopicTestingMethod_idTopicTestingMethod" ColumnName="TopicTestingMethod_idTopicTestingMethod" />
+          <ScalarProperty Name="TopicShort" ColumnName="TopicShort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllLOTopicsByLOAssessed" FunctionName="awriteModel.Store.GetAllLOTopicsByLOAssessed">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllLOTopicsByLOAssessed_Result">
+          <ScalarProperty Name="idLOTopic" ColumnName="idLOTopic" />
+          <ScalarProperty Name="UnitLearningOutcome_idUnitLearningOutcome" ColumnName="UnitLearningOutcome_idUnitLearningOutcome" />
+          <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+          <ScalarProperty Name="TopicCode" ColumnName="TopicCode" />
+          <ScalarProperty Name="TopicTestingMethod_idTopicTestingMethod" ColumnName="TopicTestingMethod_idTopicTestingMethod" />
+          <ScalarProperty Name="TopicShort" ColumnName="TopicShort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllQualUnits" FunctionName="awriteModel.Store.GetAllQualUnits">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="awriteModel.GetAllQualUnits_Result">
+          <ScalarProperty Name="idQualUnit" ColumnName="idQualUnit" />
+          <ScalarProperty Name="Qualification_idQualification" ColumnName="Qualification_idQualification" />
+          <ScalarProperty Name="QualUnitTitle" ColumnName="QualUnitTitle" />
+          <ScalarProperty Name="CGUnitNumber" ColumnName="CGUnitNumber" />
+          <ScalarProperty Name="QualUnitUAN" ColumnName="QualUnitUAN" />
+          <ScalarProperty Name="QualUnitGLH" ColumnName="QualUnitGLH" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -8,9 +8,10 @@ namespace AWriteDB
 {
     public class MQualUnit
     {
-        public int QualUnitID { get; set; }
+        public int I { get; set; }
+        public int QualUnitId { get; set; }
 
-        public int QualificationID { get; set; }
+        public int QualificationId { get; set; }
 
 
         private string qualUnitTitle;
@@ -29,20 +30,30 @@ namespace AWriteDB
             set { qualUnitNumber = value; }
         }
 
-        private string qualUnitUAN;
+        private string qualUnitUan;
 
-        public string QualUnitUAN
+        public string QualUnitUan
         {
-            get { return qualUnitUAN; }
-            set { qualUnitUAN = value; }
+            get { return qualUnitUan; }
+            set { qualUnitUan = value; }
         }
 
-        private int qualUnitGLH;
+        private int qualUnitGlh;
 
-        public int QualUnitGLH
+        public MQualUnit(int i, int i1, string s, int i2, string s1, int i3)
         {
-            get { return qualUnitGLH; }
-            set { qualUnitGLH = value; }
+            QualUnitId = i;
+            QualificationId = i1;
+            QualUnitTitle = s;
+            QualUnitNumber = i2;
+            QualUnitUan = s1;
+            QualUnitGlh = i3;
+        }
+
+        public int QualUnitGlh
+        {
+            get { return qualUnitGlh; }
+            set { qualUnitGlh = value; }
         }
 
         public string NumberAndTitle()
@@ -69,6 +80,8 @@ namespace AWriteDB
             return unitNumberToString + ": " + qualUnitTitle;
 
         }
+
+     public List<MUnitLearningOutcome> LearningOutcomes { get; set; } 
 
     }
 }

@@ -89,7 +89,7 @@
             Choose course units to be assessed and transfer them to assessment list
         </TextBlock>
 
-        <ComboBox Name="cboAssessmentType"
+        <ComboBox Name="CboAssessmentType"
                   ItemsSource="{Binding}"
                   Margin="10,5,10,5"
                   Background="Beige"
@@ -97,21 +97,21 @@
                   Grid.Column="1"
                   Grid.ColumnSpan="3"
                   HorizontalAlignment="Stretch" />
-        <TextBox Name="txtAssessmentName"
+        <TextBox Name="TxtAssessmentName"
                  Margin="10,5,10,5"
                  Background="Beige"
                  Grid.Row="2"
                  Grid.Column="1"
                  Grid.ColumnSpan="3"
                  HorizontalAlignment="Stretch" />
-        <TextBox Name="txtAssessmentCode"
+        <TextBox Name="TxtAssessmentCode"
                  Margin="10,5,10,5"
                  Background="Beige"
                  Grid.Row="3"
                  Grid.Column="1"
                  Grid.ColumnSpan="3"
                  HorizontalAlignment="Stretch" />
-        <RichTextBox Name="rtxtAssessmentScenario"
+        <RichTextBox Name="RtxtAssessmentScenario"
                      Margin="10,5,10,5"
                      Background="Beige"
                      Grid.Row="4"
@@ -132,7 +132,7 @@
                        Grid.Row="0">
                 Course Units
             </TextBlock>
-            <ListBox Name="lbCourseUnits"
+            <ListBox Name="LbCourseUnits"
                      Margin="10,5,10,5"
                      SelectionChanged="lbCourseUnits_SelectionChanged"
                      ItemsSource="{Binding}"
@@ -155,7 +155,7 @@
                        Grid.Row="0">
                 Units Assessed
             </TextBlock>
-            <ListBox Name="lbUnitsAssessed"
+            <ListBox Name="LbUnitsAssessed"
                      Margin="10,5,10,5"
                      AllowDrop="True"
                      Grid.Row="1"
@@ -187,14 +187,14 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Button Name="btnAddUnit"
+            <Button Name="BtnAddUnit"
                     Grid.Row="1"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Stretch"
                     Click="btnAddUnit_Click" Height="71">
                 Add Unit
             </Button>
-            <Button Name="btnRemoveUnit"
+            <Button Name="BtnRemoveUnit"
                     Grid.Row="3"
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"
@@ -203,14 +203,14 @@
             </Button>
             
             <TextBlock Grid.Row="4"
-                       Name="tbkCourseUnitID"
+                       Name="TbkCourseUnitId"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Text="{Binding ElementName=lbCourseUnits,Path=SelectedValue}" />
+                       Text="{Binding ElementName=LbCourseUnits,Path=SelectedValue}" />
         </Grid>
 
-        <Button Name="btnGoSetUpTasks"
+        <Button Name="BtnGoSetUpTasks"
                 Grid.Row="6"
                 Grid.Column="3"
                 Margin="10,5,10,5"

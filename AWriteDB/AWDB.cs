@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class AWDB
+    public class Awdb
     {
         public static SqlConnection GetConnection()
         {

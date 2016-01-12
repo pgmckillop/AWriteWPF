@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    class DBSystemUserType
+    class DbSystemUserType
     {
         
     }

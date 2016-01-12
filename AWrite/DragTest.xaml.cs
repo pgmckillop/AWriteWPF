@@ -30,7 +30,7 @@ namespace AWrite
 
 
         private AWriteDB.LTSC.CourseUnit awriteDataContext = new AWriteDB.LTSC.CourseUnit();
-        private DataGridTextColumn textColumn = null;
+        //private DataGridTextColumn textColumn = null;
         private string dataGridDataSource = string.Empty;
 
         private void lbSource_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -86,14 +86,14 @@ namespace AWrite
 
         private void btnFillGrid_Click(object sender, RoutedEventArgs e)
         {
-            List<AWriteDB.MCourseUnit> units = AWriteDB.DBCourseUnit.GetCourseUnits();
-            testGrid.Columns.Clear();
-            testGrid.ItemsSource = units;
+            List<AWriteDB.MCourseUnit> units = AWriteDB.DbCourseUnit.GetCourseUnits();
+            TestGrid.Columns.Clear();
+            TestGrid.ItemsSource = units;
 
             DataGridTextColumn idColumn = new DataGridTextColumn();
             idColumn.Header = "ID";
             idColumn.Binding = new Binding("idCourseUnit");
-            testGrid.Columns.Add(idColumn);
+            TestGrid.Columns.Add(idColumn);
         
         }
     }

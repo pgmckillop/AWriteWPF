@@ -8,7 +8,7 @@ namespace AWriteDB
 {
     public class MSystemUserType
     {
-        public int SystemUserTypeID { get; set; }
+        public int SystemUserTypeId { get; set; }
 
         private string systemUserTypeName;
 

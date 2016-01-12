@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="awriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="awriteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AcademicLevel">
           <Key>
             <PropertyRef Name="idAcadLevel" />
@@ -102,6 +102,13 @@
           <Property Name="idCurriculum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AcademiclLevel_idAcadLevel" Type="int" Nullable="false" />
           <Property Name="CurriculumName" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LookupID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LookupId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LOTopic">
           <Key>
@@ -572,6 +579,16 @@
           <Parameter Name="LevelID" Type="int" Mode="In" />
         </Function>
         <Function Name="GetAllCourseUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLearningOutcomes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLearningOutcomesByQualUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QualUnitID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAllLookupIDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLOTopics" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLOTopicsByLOAssessed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="learningOutcome" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAllQualUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GetCoursesByPathway" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idPathway" Type="int" Mode="In" />
         </Function>
@@ -609,6 +626,7 @@
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseUnit" EntityType="Self.CourseUnit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Curriculum" EntityType="Self.Curriculum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LookupID" EntityType="Self.LookupID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOTopic" EntityType="Self.LOTopic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QualificationPathway" EntityType="Self.QualificationPathway" Schema="dbo" store:Type="Tables" />
@@ -736,8 +754,7 @@
             <End Role="TaskTopicRange" EntitySet="TaskTopicRange" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="awriteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1498,11 +1515,11 @@
             <End Role="TaskKeyword" EntitySet="TaskKeywords" />
           </AssociationSet>
           <FunctionImport Name="GetAcadLevelByID" ReturnType="Collection(awriteModel.GetAcadLevelByID_Result)">
-            <Parameter Name="LevelID" Mode="In" Type="Int32" />
+          <Parameter Name="LevelID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAllCourseUnits" ReturnType="Collection(awriteModel.GetAllCourseUnits_Result)" />
           <FunctionImport Name="GetCoursesByPathway" ReturnType="Collection(awriteModel.GetCoursesByPathway_Result)">
-            <Parameter Name="idPathway" Mode="In" Type="Int32" />
+          <Parameter Name="idPathway" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCourseUnitID" ReturnType="Collection(Int32)">
             <Parameter Name="courseID" Mode="In" Type="Int32" />
@@ -1510,23 +1527,34 @@
             <Parameter Name="courseUnitID" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCourseUnitsByCourse" ReturnType="Collection(awriteModel.GetCourseUnitsByCourse_Result)">
-            <Parameter Name="idCourse" Mode="In" Type="Int32" />
+          <Parameter Name="idCourse" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCourseUnitsByCourseAllInfo" ReturnType="Collection(awriteModel.GetCourseUnitsByCourseAllInfo_Result)">
-            <Parameter Name="idCourse" Mode="In" Type="Int32" />
+          <Parameter Name="idCourse" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCurriculumByLevel" ReturnType="Collection(awriteModel.GetCurriculumByLevel_Result)">
-            <Parameter Name="idAcadLevel" Mode="In" Type="Int32" />
+          <Parameter Name="idAcadLevel" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetPathwaysByQualification" ReturnType="Collection(awriteModel.GetPathwaysByQualification_Result)">
-            <Parameter Name="idQualification" Mode="In" Type="Int32" />
+          <Parameter Name="idQualification" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetQualificationByCurriculum" ReturnType="Collection(awriteModel.GetQualificationByCurriculum_Result)">
-            <Parameter Name="idCurriculum" Mode="In" Type="Int32" />
+          <Parameter Name="idCurriculum" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetSystemUserByLogin" ReturnType="Collection(awriteModel.GetSystemUserByLogin_Result)">
-            <Parameter Name="systemUserLoginName" Mode="In" Type="String" />
+          <Parameter Name="systemUserLoginName" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="LookupIDs" EntityType="awriteModel.LookupID" />
+          <FunctionImport Name="GetAllLearningOutcomes" ReturnType="Collection(awriteModel.GetAllLearningOutcomes_Result)" />
+          <FunctionImport Name="GetAllLearningOutcomesByQualUnit" ReturnType="Collection(awriteModel.GetAllLearningOutcomesByQualUnit_Result)">
+            <Parameter Name="QualUnitID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllLookupIDS" ReturnType="Collection(awriteModel.GetAllLookupIDS_Result)" />
+          <FunctionImport Name="GetAllLOTopics" ReturnType="Collection(awriteModel.GetAllLOTopics_Result)" />
+          <FunctionImport Name="GetAllLOTopicsByLOAssessed" ReturnType="Collection(awriteModel.GetAllLOTopicsByLOAssessed_Result)">
+            <Parameter Name="learningOutcome" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllQualUnits" ReturnType="Collection(awriteModel.GetAllQualUnits_Result)" />
         </EntityContainer>
         <ComplexType Name="GetAcadLevelByID_Result">
           <Property Type="Int32" Name="idAcadLevel" Nullable="false" />
@@ -1583,6 +1611,55 @@
           <Property Type="String" Name="SystemUserEmail" Nullable="false" />
           <Property Type="String" Name="SystemUserLandline" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="SystemUserMobile" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <EntityType Name="LookupID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LookupId1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="GetAllLearningOutcomes_Result">
+          <Property Type="Int32" Name="idUnitLearningOutcome" Nullable="false" />
+          <Property Type="Int32" Name="QualUnit_idQualUnit" Nullable="false" />
+          <Property Type="String" Name="LearningOutsomeName" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="LearningOutcomeNumber" Nullable="false" />
+          <Property Type="String" Name="LOShort" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllLearningOutcomesByQualUnit_Result">
+          <Property Type="Int32" Name="idUnitLearningOutcome" Nullable="false" />
+          <Property Type="Int32" Name="QualUnit_idQualUnit" Nullable="false" />
+          <Property Type="String" Name="LearningOutsomeName" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="LearningOutcomeNumber" Nullable="false" />
+          <Property Type="String" Name="LOShort" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllLookupIDS_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="LookupId" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetAllLOTopics_Result">
+          <Property Type="Int32" Name="idLOTopic" Nullable="false" />
+          <Property Type="Int32" Name="UnitLearningOutcome_idUnitLearningOutcome" Nullable="false" />
+          <Property Type="String" Name="TopicName" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="TopicCode" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="TopicTestingMethod_idTopicTestingMethod" Nullable="true" />
+          <Property Type="String" Name="TopicShort" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllLOTopicsByLOAssessed_Result">
+          <Property Type="Int32" Name="idLOTopic" Nullable="false" />
+          <Property Type="Int32" Name="UnitLearningOutcome_idUnitLearningOutcome" Nullable="false" />
+          <Property Type="String" Name="TopicName" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="TopicCode" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="TopicTestingMethod_idTopicTestingMethod" Nullable="true" />
+          <Property Type="String" Name="TopicShort" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllQualUnits_Result">
+          <Property Type="Int32" Name="idQualUnit" Nullable="false" />
+          <Property Type="Int32" Name="Qualification_idQualification" Nullable="false" />
+          <Property Type="String" Name="QualUnitTitle" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="CGUnitNumber" Nullable="false" />
+          <Property Type="String" Name="QualUnitUAN" Nullable="true" MaxLength="45" />
+          <Property Type="Int32" Name="QualUnitGLH" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1931,6 +2008,80 @@
                 <ScalarProperty Name="SystemUserEmail" ColumnName="SystemUserEmail" />
                 <ScalarProperty Name="SystemUserLandline" ColumnName="SystemUserLandline" />
                 <ScalarProperty Name="SystemUserMobile" ColumnName="SystemUserMobile" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="LookupIDs">
+            <EntityTypeMapping TypeName="awriteModel.LookupID">
+              <MappingFragment StoreEntitySet="LookupID">
+                <ScalarProperty Name="LookupId1" ColumnName="LookupId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLearningOutcomes" FunctionName="awriteModel.Store.GetAllLearningOutcomes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awriteModel.GetAllLearningOutcomes_Result">
+                <ScalarProperty Name="idUnitLearningOutcome" ColumnName="idUnitLearningOutcome" />
+                <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+                <ScalarProperty Name="LearningOutsomeName" ColumnName="LearningOutsomeName" />
+                <ScalarProperty Name="LearningOutcomeNumber" ColumnName="LearningOutcomeNumber" />
+                <ScalarProperty Name="LOShort" ColumnName="LOShort" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLearningOutcomesByQualUnit" FunctionName="awriteModel.Store.GetAllLearningOutcomesByQualUnit">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awriteModel.GetAllLearningOutcomesByQualUnit_Result">
+                <ScalarProperty Name="idUnitLearningOutcome" ColumnName="idUnitLearningOutcome" />
+                <ScalarProperty Name="QualUnit_idQualUnit" ColumnName="QualUnit_idQualUnit" />
+                <ScalarProperty Name="LearningOutsomeName" ColumnName="LearningOutsomeName" />
+                <ScalarProperty Name="LearningOutcomeNumber" ColumnName="LearningOutcomeNumber" />
+                <ScalarProperty Name="LOShort" ColumnName="LOShort" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLookupIDS" FunctionName="awriteModel.Store.GetAllLookupIDS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awriteModel.GetAllLookupIDS_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLOTopics" FunctionName="awriteModel.Store.GetAllLOTopics">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awriteModel.GetAllLOTopics_Result">
+                <ScalarProperty Name="idLOTopic" ColumnName="idLOTopic" />
+                <ScalarProperty Name="UnitLearningOutcome_idUnitLearningOutcome" ColumnName="UnitLearningOutcome_idUnitLearningOutcome" />
+                <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+                <ScalarProperty Name="TopicCode" ColumnName="TopicCode" />
+                <ScalarProperty Name="TopicTestingMethod_idTopicTestingMethod" ColumnName="TopicTestingMethod_idTopicTestingMethod" />
+                <ScalarProperty Name="TopicShort" ColumnName="TopicShort" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLOTopicsByLOAssessed" FunctionName="awriteModel.Store.GetAllLOTopicsByLOAssessed">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awriteModel.GetAllLOTopicsByLOAssessed_Result">
+                <ScalarProperty Name="idLOTopic" ColumnName="idLOTopic" />
+                <ScalarProperty Name="UnitLearningOutcome_idUnitLearningOutcome" ColumnName="UnitLearningOutcome_idUnitLearningOutcome" />
+                <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+                <ScalarProperty Name="TopicCode" ColumnName="TopicCode" />
+                <ScalarProperty Name="TopicTestingMethod_idTopicTestingMethod" ColumnName="TopicTestingMethod_idTopicTestingMethod" />
+                <ScalarProperty Name="TopicShort" ColumnName="TopicShort" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllQualUnits" FunctionName="awriteModel.Store.GetAllQualUnits">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="awriteModel.GetAllQualUnits_Result">
+                <ScalarProperty Name="idQualUnit" ColumnName="idQualUnit" />
+                <ScalarProperty Name="Qualification_idQualification" ColumnName="Qualification_idQualification" />
+                <ScalarProperty Name="QualUnitTitle" ColumnName="QualUnitTitle" />
+                <ScalarProperty Name="CGUnitNumber" ColumnName="CGUnitNumber" />
+                <ScalarProperty Name="QualUnitUAN" ColumnName="QualUnitUAN" />
+                <ScalarProperty Name="QualUnitGLH" ColumnName="QualUnitGLH" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

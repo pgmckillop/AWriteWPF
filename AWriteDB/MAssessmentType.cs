@@ -8,7 +8,7 @@ namespace AWriteDB
 {
     public class MAssessmentType
     {
-        public int AssessmentTypeID { get; set; }
+        public int AssessmentTypeId { get; set; }
         private string assessmentTypeName;
 
         public string AssessmentTypeName
@@ -18,9 +18,9 @@ namespace AWriteDB
         }
 
 
-        public MAssessmentType(int myID, string myName)
+        public MAssessmentType(int myId, string myName)
         {
-            AssessmentTypeID = myID;
+            AssessmentTypeId = myId;
             assessmentTypeName = myName;
         }
 

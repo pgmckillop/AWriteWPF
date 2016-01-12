@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AWriteDB.LTSC;
 
 namespace AWriteDB
 {
     public class MUnitLearningOutcome
     {
-        public int UnitLearningOutcomeID { get; set; }
+        public int UnitLearningOutcomeId { get; set; }
 
-        public int QualificationUnitID { get; set; }
+        public int QualificationUnitId { get; set; }
 
         private string learningOutcomeName;
 
@@ -28,5 +29,30 @@ namespace AWriteDB
             set { learningOutcomeNumber = value; }
         }
 
+        private string loShort;
+
+        public string LoShort
+        {
+            get { return loShort; }
+            set { loShort = value; }
+        }
+
+        public int IdQualUnit { get; set; }
+
+        public string LoDisplay()
+        {
+            return learningOutcomeNumber.ToString() + ": " + loShort;
+        }
+
+        public MUnitLearningOutcome(int i, int j, string s, int k, string u)
+        {
+            UnitLearningOutcomeId = i;
+            QualificationUnitId = j;
+            LearningOutcomeName = s;
+            LearningOutcomeNumber = k;
+            LoShort = u;
+        }
+
+        public List<LOTopic> Topics { get; set; }
     }
 }

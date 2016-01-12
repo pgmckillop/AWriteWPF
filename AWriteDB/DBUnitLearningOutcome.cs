@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace AWriteDB
 {
-    public class DBUnitLearningOutcome
+    public class DbUnitLearningOutcome
     {
+        public static List<MUnitLearningOutcome> GetAllLearningOutcomes()
+        {
+            List<MUnitLearningOutcome> outcomes = new List<MUnitLearningOutcome>();
+
+
+
+
+            return outcomes;
+        }
     }
 }
